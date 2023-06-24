@@ -1,7 +1,7 @@
 # movie_api
 
 # Name: CUB Film data
-## - An arthouse database -
+## - Arthouse database -
 
 ### A complete web application (client-side and server-side) built using full-stack JavaScript technologies
 
