@@ -1,5 +1,7 @@
 
-  const express = require('express');
+  const express = require('express'), 
+    morgan = require('morgan');
+
   const app = express ();
 
   let topMovies = [
@@ -96,10 +98,15 @@
     }
   ];
 
+  app.use (morgan('common'));
   app.use (express.static('public'));
 
   app.get('/', (req, res) => {
     res.send('Welcome to CUB FILM DATA!');
+  });
+
+  app.get('/documentation', (req,res) => {
+    res.sendFile('public/documentation.html', {root:__dirname});
   });
 
   app.get('/movies', (req, res) => {
