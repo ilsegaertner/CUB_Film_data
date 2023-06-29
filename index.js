@@ -98,8 +98,8 @@
     }
   ];
 
-  app.use (morgan('common'));
-  app.use (express.static('public'));
+  app.use (morgan('common')); //Logging
+  app.use (express.static('public')); //static files
 
   app.get('/', (req, res) => {
     res.send('Welcome to CUB FILM DATA!');
