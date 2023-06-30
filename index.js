@@ -100,6 +100,7 @@
 
   app.use (morgan('common')); //Logging
   app.use (express.static('public')); //static files
+  app.use(morgan('combined'));
 
   app.get('/', (req, res) => {
     res.send('Welcome to CUB FILM DATA!');
