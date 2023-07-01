@@ -100,3 +100,20 @@ Timestamp: Wed Jun 28 2023 16:47:25 GMT+0200 (Mitteleuropäische Sommerzeit)
 URL: /favicon.ico
 Timestamp: Wed Jun 28 2023 16:47:25 GMT+0200 (Mitteleuropäische Sommerzeit)
 
+::1 - - [01/Jul/2023:08:05:37 +0000] "GET / HTTP/1.1" 304 -
+::1 - - [01/Jul/2023:08:05:41 +0000] "GET /movies HTTP/1.1" 304 -
+::1 - - [01/Jul/2023:08:10:44 +0000] "GET /movies HTTP/1.1" 304 -
+::1 - - [01/Jul/2023:08:10:47 +0000] "GET /documentation HTTP/1.1" 404 152
+::1 - - [01/Jul/2023:08:10:51 +0000] "GET /documentation.html HTTP/1.1" 304 -
+::1 - - [01/Jul/2023:08:16:57 +0000] "GET / HTTP/1.1" 304 -
+::1 - - [01/Jul/2023:08:17:01 +0000] "GET /documentation HTTP/1.1" 404 152
+::1 - - [01/Jul/2023:08:28:28 +0000] "GET / HTTP/1.1" 304 -
+::1 - - [01/Jul/2023:08:28:45 +0000] "GET /movies HTTP/1.1" 304 -
+::1 - - [01/Jul/2023:08:29:17 +0000] "GET /movies HTTP/1.1" 304 -
+::1 - - [01/Jul/2023:08:29:37 +0000] "GET / HTTP/1.1" 304 -
+::1 - - [01/Jul/2023:08:33:35 +0000] "GET / HTTP/1.1" 304 -
+::1 - - [01/Jul/2023:08:33:43 +0000] "GET / HTTP/1.1" 304 -
+::1 - - [01/Jul/2023:08:33:51 +0000] "GET / HTTP/1.1" 304 -
+::1 - - [01/Jul/2023:08:34:04 +0000] "GET / HTTP/1.1" 304 -
+::1 - - [01/Jul/2023:08:34:21 +0000] "GET / HTTP/1.1" 304 -
+::1 - - [01/Jul/2023:08:35:35 +0000] "GET / HTTP/1.1" 304 -

@@ -1,6 +1,7 @@
 
   const express = require('express'), 
-    morgan = require('morgan');
+    morgan = require('morgan'),
+    fs = require('fs');
 
   const app = express ();
 
@@ -98,9 +99,11 @@
     }
   ];
 
-  app.use (morgan('common')); //Logging
+  app.use (morgan('common', {
+    stream: fs.createWriteStream('./log.txt', {flags: 'a'})
+  })); //the morgan token how it logs to the txt file
+  app.use(morgan('dev')); //the morgan token how it logs to the terminal
   app.use (express.static('public')); //static files
-  app.use(morgan('combined'));
 
   app.get('/', (req, res) => {
     res.send('Welcome to CUB FILM DATA!');
