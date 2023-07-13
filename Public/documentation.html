@@ -59,10 +59,10 @@ Users will be able to sign up, update their personal information, and create a l
   <tr>
     <td>Return Data about a director (bio, birth year, death year) by name
     </td>
-    <td>/movies/directors/[director name]
+    <td>/movies/director/[director name]
     </td>
     <td>GET</td>
-    <td>`app.get('/movies/directors/:directorName', (req, res) => {res.status(200).send('Successfully loaded the data of the director')}`</td>
+    <td>`app.get('/movies/director/:directorName', (req, res) => {res.status(200).send('Successfully loaded the data of the director')}`</td>
     <td>None</td>
     <td>A text message showing the name of the director</td>
   </tr>
