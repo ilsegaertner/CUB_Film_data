@@ -1,61 +1,67 @@
 <!DOCTYPE html>
+<html>
 
+<head>
+  <style>
+    table {
+      table-layout: fixed;
+      width: 100%;
+      border-collapse: collapse;
+      border: 3px solid rgb(87, 87, 87);
+      text-align: center;
+      vertical-align: middle;
+      border: 4px solid black;
+      font-family: sans-serif;
+    }
 
-  <head>
-<style>
-  table {
-  table-layout: fixed;
-  width: 100%;
-  border-collapse: collapse;
-  border: 3px solid rgb(87, 87, 87);
-  text-align: center;
-  vertical-align: middle;
-  border: 4px solid black;
-  font-family:sans-serif;
-}
-tbody tr:nth-child(even) {
-  background-color: #eee;
-}
-tbody tr:nth-child(odd) {
-  background-color: #fff;
-}
-.section {
-  padding: 20px;
-  padding-bottom: 55px;
-}
-</style>
-  </head>
+    tbody tr:nth-child(even) {
+      background-color: #eee;
+    }
 
-  <body>
-<h1 style="padding: 20px;"><img src="/screenshots/01.PNG">Movie_API</h1>
+    tbody tr:nth-child(odd) {
+      background-color: #fff;
+    }
 
-<h2 style="padding: 20px;"> CUB Film data - An arthouse classics database - </h2>
+    .section {
+      padding: 20px;
+      padding-bottom: 55px;
+    }
+  </style>
+</head>
 
-<h3 style="padding-left: 20px;">A complete web application (client-side and server-side) built using full-stack JavaScript technologies</h3> 
+<body>
+  <h1 style="padding: 20px;"><img src="/screenshots/01.PNG">Movie_API</h1>
 
-<h3 style="padding-left: 20px;"> The project demonstrates mastery of full-stack JavaScript development, including APIs, web server frameworks, databases, business logic, authentication and data security</h3>
+  <h2 style="padding: 20px;"> CUB Film data - An arthouse classics database - </h2>
 
-<section class="section">
-This API is the server-side component of a movies web application. 
-The web application will provide users with access to information about different movies, directors, and genres. <br>
-Users will be able to sign up, update their personal information, and create a list of their favorite movies.
-</section>
+  <h3 style="padding-left: 20px;">A complete web application (client-side and server-side) built using full-stack
+    JavaScript technologies</h3>
 
-<section>
-<table>
-  <tr>
-    <th>REQUEST</th>
-    <th>URL</th>
-    <th>HTTP METHOD</th>
-    <th>EXPRESS ROUTE</th>
-    <th>REQUEST BODY DATA FORMAT</th>
-    <th>RESPONSE BODY DATA FORMAT</th>
-  </tr>
-  <tr>
-    <td>Return a list of ALL movies to the user</td>
-    <td>/movies</td>
-    <td>GET</td>
-    <td><code>app.get('/movies', (req, res) => {
+  <h3 style="padding-left: 20px;"> The project demonstrates mastery of full-stack JavaScript development, including
+    APIs, web server frameworks, databases, business logic, authentication and data security</h3>
+
+  <section class="section">
+    This API is the server-side component of a movies web application.
+    The web application will provide users with access to information about different movies, directors, and genres.
+    <br>
+    Users will be able to sign up, update their personal information, and create a list of their favorite movies.
+  </section>
+
+  <section>
+    <table>
+      <tr>
+        <th>REQUEST</th>
+        <th>URL</th>
+        <th>HTTP METHOD</th>
+        <th>EXPRESS ROUTE</th>
+        <th>REQUEST BODY DATA FORMAT</th>
+        <th>RESPONSE BODY DATA FORMAT</th>
+      </tr>
+      <tr>
+        <td>Return a list of ALL movies to the user</td>
+        <td>/movies</td>
+        <td>GET</td>
+        <td><code>app.get('/movies', (req, res) => {
       Movies.find()
         .then((movies) => {
           res.status(201).json(movies);
@@ -65,15 +71,16 @@ Users will be able to sign up, update their personal information, and create a l
           res.status(500).send('Error: ' + err);
         });
     });</code></td>
-    <td>None</td>
-    <td>A JSON object holding data about all movies.</td>
-  </tr>
-  <tr>
-    <td>Return data (description, genre, director, image URL, whether it is featured or not, release year, actors) about a single movie by title to the user
-    </td>
-    <td>/movies/[title]</td>
-    <td>GET</td>
-    <td><code>app.get('/movies/:Title', (req, res) => {
+        <td>None</td>
+        <td>A JSON object holding data about all movies.</td>
+      </tr>
+      <tr>
+        <td>Return data (description, genre, director, image URL, whether it is featured or not, release year, actors)
+          about a single movie by title to the user
+        </td>
+        <td>/movies/[title]</td>
+        <td>GET</td>
+        <td><code>app.get('/movies/:Title', (req, res) => {
       Movies.findOne( { Title: req.params.Title })
         .then((movie) => {
           res.json(movie);
@@ -83,15 +90,16 @@ Users will be able to sign up, update their personal information, and create a l
           res.status(500).send('Error: ' + err);
         });
     });</code></td>
-    <td>None</td>
-    <td>A JSON object holding data (description, genre, director, image URL, whether it is featured or not, release year, actors) about a single movie. </td>
-  </tr>
-  <tr>
-    <td>Return data about a genre (description) by name/title (e.g., “Thriller”)
-    </td>
-    <td>/movies/genre/[genre name]</td>
-    <td>GET</td>
-    <td><code>app.get('/movies/genre/:Genrename', (req, res) => {
+        <td>None</td>
+        <td>A JSON object holding data (description, genre, director, image URL, whether it is featured or not, release
+          year, actors) about a single movie. </td>
+      </tr>
+      <tr>
+        <td>Return data about a genre (description) by name/title (e.g., “Thriller”)
+        </td>
+        <td>/movies/genre/[genre name]</td>
+        <td>GET</td>
+        <td><code>app.get('/movies/genre/:Genrename', (req, res) => {
       Movies.findOne( { Genre: req.params.Name })
         .then((movie) => {
           res.json(movie);
@@ -101,16 +109,16 @@ Users will be able to sign up, update their personal information, and create a l
           res.status(500).send('Error: ' + err);
         });
     });</code></td>
-    <td>None</td>
-    <td>A JSON object showing data about the genre.</td>
-  </tr>
-  <tr>
-    <td>Return Data about a director (bio, birth year, death year) by name
-    </td>
-    <td>/movies/director/[director name]
-    </td>
-    <td>GET</td>
-    <td><code>app.get('/movies/director/:Directorame', (req, res) => {
+        <td>None</td>
+        <td>A JSON object showing data about the genre.</td>
+      </tr>
+      <tr>
+        <td>Return Data about a director (bio, birth year, death year) by name
+        </td>
+        <td>/movies/director/[director name]
+        </td>
+        <td>GET</td>
+        <td><code>app.get('/movies/director/:Directorame', (req, res) => {
       Movies.findOne( { Director: req.params.Name })
         .then((movie) => {
           res.json(movie);
@@ -120,15 +128,15 @@ Users will be able to sign up, update their personal information, and create a l
           res.status(500).send('Error: ' + err);
         });
     });</code></td>
-    <td>None</td>
-    <td>A text message showing the name of the director</td>
-  </tr>
-  <tr>
-    <td>Allow new users to register
-    </td>
-    <td>/users</td>
-    <td>POST</td>
-    <td><code>app.post('/users', (req, res) => {
+        <td>None</td>
+        <td>A text message showing the name of the director</td>
+      </tr>
+      <tr>
+        <td>Allow new users to register
+        </td>
+        <td>/users</td>
+        <td>POST</td>
+        <td><code>app.post('/users', (req, res) => {
       Users.findOne( { Username: req.body.Username })
       .then((user) => {
         if (user) {
@@ -153,23 +161,23 @@ Users will be able to sign up, update their personal information, and create a l
         res.status(500).send('Error: ' + error);
       });
     });</code></td>
-    <td>A JSON object holding data about the user to add, structured like: {
-      Username: „Martin Hochwald“, 
-      Email: „hochwald@gmail.com“ }</td>
-    <td>A JSON object holding data about the user that was added, including an id: Example: {
-      id: 1,
-      Username: „Martin Hochwald“, 
-      Password: "1234"
-      Email: „hochwald@gmail.com“,
-      Birthday: "Date:1979-03-14T00:00:00Z",
-      FavoriteMovies: [ "Das Schweigen der Lämmer", "Alcatraz" ]}</td>
-  </tr>
-  <tr>
-    <td>Allow users to update their user info (username)
-    </td>
-    <td>/users/[ID]</td>
-    <td>PUT</td>
-    <td><code>app.put('/users/:Username', (req, res) => {
+        <td>A JSON object holding data about the user to add, structured like: {
+          Username: „Martin Hochwald“,
+          Email: „hochwald@gmail.com“ }</td>
+        <td>A JSON object holding data about the user that was added, including an id: Example: {
+          id: 1,
+          Username: „Martin Hochwald“,
+          Password: "1234"
+          Email: „hochwald@gmail.com“,
+          Birthday: "Date:1979-03-14T00:00:00Z",
+          FavoriteMovies: [ "Das Schweigen der Lämmer", "Alcatraz" ]}</td>
+      </tr>
+      <tr>
+        <td>Allow users to update their user info (username)
+        </td>
+        <td>/users/[ID]</td>
+        <td>PUT</td>
+        <td><code>app.put('/users/:Username', (req, res) => {
       Users.findOneAndUpdate({ Username: req.params.Username },
       { $set: { 
           Username: req.body.Username,
@@ -188,15 +196,15 @@ Users will be able to sign up, update their personal information, and create a l
         }
       });
     });</code></td>
-    <td>None</td>
-    <td>A JSON object holding data about the updated username.</td>
-  </tr>
-  <tr>
-    <td>Allow users to add a movie to their list of favorites (showing a text that a movie has been added)
-    </td>
-    <td>/users/[ID]/[title]</td>
-    <td>POST</td>
-    <td><code>app.post('/users/:Username/movies/:MovieID', (req, res) => {
+        <td>None</td>
+        <td>A JSON object holding data about the updated username.</td>
+      </tr>
+      <tr>
+        <td>Allow users to add a movie to their list of favorites (showing a text that a movie has been added)
+        </td>
+        <td>/users/[ID]/[title]</td>
+        <td>POST</td>
+        <td><code>app.post('/users/:Username/movies/:MovieID', (req, res) => {
       Users.findOneAndUpdate({ Username: req.params.Username },
       {
           $push: { FavoriteMovies: req.params.MovieID }
@@ -211,15 +219,16 @@ Users will be able to sign up, update their personal information, and create a l
         }
       });
     });</code></td>
-    <td>A JSON object holding data about the movie and movie data for the user to add.</td>
-    <td>A text message showing that the movie has been  added to their favourite list.</td>
-  </tr>
-  <tr>
-    <td>Allow users to remove a movie from their list of favorites (showing only a text that a movie has been removed)
-    </td>
-    <td>/users/[ID]/[title]</td>
-    <td>DELETE</td>
-    <td><code>app.delete('/users/:Username/movies/:MovieID', (req, res) => {
+        <td>A JSON object holding data about the movie and movie data for the user to add.</td>
+        <td>A text message showing that the movie has been added to their favourite list.</td>
+      </tr>
+      <tr>
+        <td>Allow users to remove a movie from their list of favorites (showing only a text that a movie has been
+          removed)
+        </td>
+        <td>/users/[ID]/[title]</td>
+        <td>DELETE</td>
+        <td><code>app.delete('/users/:Username/movies/:MovieID', (req, res) => {
       Users.findOneAndRemove({ Username: req.params.Username },
       {
           $pull: { FavoriteMovies: req.params.MovieID }
@@ -234,15 +243,15 @@ Users will be able to sign up, update their personal information, and create a l
         }
       });
     });</code></td>
-    <td>None</td>
-    <td>A text message showing that the movie has been  removed from their favourite list.</td>
-  </tr>
-  <tr>
-    <td>Allow existing users to deregister (showing only a text that a user email has been removed)
-    </td>
-    <td>/users/[ID]</td>
-    <td>DELETE</td>
-    <td><code>app.delete('users/:Username', (req, res) => {
+        <td>None</td>
+        <td>A text message showing that the movie has been removed from their favourite list.</td>
+      </tr>
+      <tr>
+        <td>Allow existing users to deregister (showing only a text that a user email has been removed)
+        </td>
+        <td>/users/[ID]</td>
+        <td>DELETE</td>
+        <td><code>app.delete('users/:Username', (req, res) => {
       Users.findOneAndRemove({ Username: req.params.Username })
         .then((user) => {
           if (!user) {
@@ -256,11 +265,12 @@ Users will be able to sign up, update their personal information, and create a l
           res.status(500).send('Error: ' + err);
         });
     });</code></td>
-    <td>None</td>
-    <td>A text message showing that the user has deregistered.</td>
-  </tr>
-</table>
-</section>
+        <td>None</td>
+        <td>A text message showing that the user has deregistered.</td>
+      </tr>
+    </table>
+  </section>
 
 </body>
+
 </html>
