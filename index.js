@@ -16,6 +16,10 @@ const Directors = Models.Director;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+let auth = require('./auth') (app); // The (app) argument ensures that Express is available in the auth.js file as well
+const passport = require('passport');
+require('./passport');
+
 mongoose.connect("mongodb://127.0.0.1/cfDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -42,8 +46,8 @@ We’ll expect JSON in this format
   Birthday: Date
 }
 */
-app.post("/users", (req, res) => {
-  Users.findOne({ Username: req.body.Username })
+app.post("/users", async (req, res) => {
+  await Users.findOne({ Username: req.body.Username })
     .then((user) => {
       if (user) {
         return res.status(400).send(req.body.Username + "aready exists");
@@ -70,8 +74,8 @@ app.post("/users", (req, res) => {
 });
 
 // Get all users
-app.get("/users", (req, res) => {
-  Users.find()
+app.get("/users", async (req, res) => {
+  await Users.find()
     .then((users) => {
       res.status(201).json(users);
     })
@@ -82,10 +86,8 @@ app.get("/users", (req, res) => {
 });
 
 // Get all movies
-app.get('/movies', (req, res) => {
-  console.log('GET request received for /movies');
-
-  Movies.find()
+app.get('/movies', passport.authenticate('jwt', { session: false }), async (req, res) => {
+  await Movies.find()
     .then((movies) => {
       res.status(201).json(movies);
     })
@@ -96,8 +98,8 @@ app.get('/movies', (req, res) => {
 });
 
 // Get a user by username
-app.get("/users/:Username", (req, res) => {
-  Users.findOne({ Username: req.params.Username })
+app.get("/users/:Username", async (req, res) => {
+  await Users.findOne({ Username: req.params.Username })
     .then((user) => {
       res.json(user);
     })
@@ -109,8 +111,8 @@ app.get("/users/:Username", (req, res) => {
 
 
 // Get data by title
-app.get("/movies/:Title", (req, res) => {
-  Movies.findOne({ Title: req.params.Title })
+app.get("/movies/:Title", async (req, res) => {
+  await Movies.findOne({ Title: req.params.Title })
     .then((movie) => {
       res.json(movie);
     })
@@ -121,8 +123,8 @@ app.get("/movies/:Title", (req, res) => {
 });
 
 // Get data about genre
-app.get("/movies/genre/:Name", (req, res) => {
-  Movies.findOne({ "Genre.Name": req.params.Name })
+app.get("/movies/genre/:Name", async (req, res) => {
+  await Movies.findOne({ "Genre.Name": req.params.Name })
     .then((genre) => {
       if (!genre) {
         return res.status(404).send(`Genre ${GenreName} not found.`);
@@ -136,8 +138,8 @@ app.get("/movies/genre/:Name", (req, res) => {
 });
 
 // Get data about director
-  app.get("/movies/director/:Name", (req, res) => {
-    Movies.findOne({ "Director.Name": req.params.Name })
+  app.get("/movies/director/:Name", async (req, res) => {
+   await Movies.findOne({ "Director.Name": req.params.Name })
       .then((director) => {
         if (!director) {
           return res.status(404).send(`Director ${directorName} not found.`);
@@ -161,8 +163,8 @@ app.get("/movies/genre/:Name", (req, res) => {
   (required)
   Birthday: Date
 }*/
-app.put("/users/:Username", (req, res) => {
-  Users.findOneAndUpdate(
+app.put("/users/:Username", async (req, res) => {
+  await Users.findOneAndUpdate(
     { Username: req.params.Username },
     {
       $set: {
@@ -184,8 +186,8 @@ app.put("/users/:Username", (req, res) => {
 });
 
 // Add a movie to a user's list of favorites (with premises instead of callbacks)
-app.post("/users/:Username/movies/:MovieID", (req, res) => {
-  Users.findOneAndUpdate(
+app.post("/users/:Username/movies/:MovieID", async (req, res) => {
+  await Users.findOneAndUpdate(
     { Username: req.params.Username },
     {
       $push: { FavoriteMovies: req.params.MovieID },
@@ -202,8 +204,8 @@ app.post("/users/:Username/movies/:MovieID", (req, res) => {
 });
 
 // Remove a movie from a user's list of favorites (with premises instead of callbacks)
-app.delete("/users/:Username/movies/:MovieID", (req, res) => {
-  Users.findOneAndUpdate(
+app.delete("/users/:Username/movies/:MovieID", async (req, res) => {
+ await Users.findOneAndUpdate(
     { Username: req.params.Username },
     {
       $pull: { FavoriteMovies: req.params.MovieID },
@@ -220,8 +222,8 @@ app.delete("/users/:Username/movies/:MovieID", (req, res) => {
 });
 
 // Delete a user by username
-app.delete("/users/:Username", (req, res) => {
-  Users.findOneAndRemove({ Username: req.params.Username })
+app.delete("/users/:Username", async (req, res) => {
+  await Users.findOneAndRemove({ Username: req.params.Username })
     .then((user) => {
       if (!user) {
         res.status(400).send(req.params.Username + " was not found");
