@@ -354,3 +354,7 @@ Timestamp: Wed Jun 28 2023 16:47:25 GMT+0200 (Mitteleuropäische Sommerzeit)
 ::1 - - [24/Jul/2023:16:20:20 +0000] "POST /users/RsadadsfeaER/movies/64b278281decd17dce727405 HTTP/1.1" 401 -
 ::1 - - [24/Jul/2023:16:20:24 +0000] "DELETE /users/RsadadsfeaER/movies/64b2778f1decd17dce727403 HTTP/1.1" 401 -
 ::1 - - [24/Jul/2023:16:20:27 +0000] "DELETE /users/lunarsparkle2001 HTTP/1.1" 401 -
+::1 - - [26/Jul/2023:07:14:05 +0000] "POST /users?Username=Tom2k&Password=servus HTTP/1.1" 400 18
+::1 - - [26/Jul/2023:07:14:25 +0000] "POST /users?Username=Tom2k&Password=servus HTTP/1.1" 400 18
+::1 - - [26/Jul/2023:07:15:31 +0000] "POST /user HTTP/1.1" 404 144
+::1 - - [26/Jul/2023:07:15:40 +0000] "POST /users HTTP/1.1" 400 18
