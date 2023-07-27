@@ -363,3 +363,7 @@ Timestamp: Wed Jun 28 2023 16:47:25 GMT+0200 (Mitteleuropäische Sommerzeit)
 ::1 - - [26/Jul/2023:09:11:44 +0000] "PUT /users/jacktheripper1878 HTTP/1.1" 401 -
 ::1 - - [26/Jul/2023:09:12:23 +0000] "PUT /users/jacktheripper1878 HTTP/1.1" 400 17
 ::1 - - [26/Jul/2023:09:12:29 +0000] "GET /movies HTTP/1.1" 201 11441
+::1 - - [27/Jul/2023:07:20:25 +0000] "GET /movies HTTP/1.1" 201 11441
+::1 - - [27/Jul/2023:07:20:37 +0000] "GET /movies/Genre/Romance HTTP/1.1" 401 -
+::1 - - [27/Jul/2023:07:20:43 +0000] "POST /users HTTP/1.1" 400 18
+::1 - - [27/Jul/2023:09:52:10 +0000] "POST /users HTTP/1.1" 201 222

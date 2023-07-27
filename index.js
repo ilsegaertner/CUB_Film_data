@@ -13,12 +13,15 @@ const Users = Models.User;
 const Genres = Models.Genre;
 const Directors = Models.Director;
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+const cors = require('cors');
+app.use(cors());
 
 let auth = require('./auth') (app); // The (app) argument ensures that Express is available in the auth.js file as well
 const passport = require('passport');
 require('./passport');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect("mongodb://127.0.0.1/cfDB", {
   useNewUrlParser: true,
@@ -47,6 +50,7 @@ We’ll expect JSON in this format
 }
 */
 app.post("/users", async (req, res) => {
+  let hashedPassword = Users.hashPassword(req.body.Password);
   await Users.findOne({ Username: req.body.Username })
     .then((user) => {
       if (user) {
@@ -54,7 +58,7 @@ app.post("/users", async (req, res) => {
       } else {
         Users.create({
           Username: req.body.Username,
-          Password: req.body.Password,
+          Password: hashedPassword,
           Email: req.body.Email,
           Birthday: req.body.Birthday,
         })
