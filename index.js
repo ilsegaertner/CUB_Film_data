@@ -14,9 +14,9 @@ const Genres = Models.Genre;
 const Directors = Models.Director;
 
 const cors = require('cors');
-app.use(cors());
+app.use(cors()); // ensures that all domains are allowed to make requests to your API.
 
-const { check, validationResult } = require('express-validator');
+const { check, validationResult } = require('express-validator'); // for server-side validation
 
 let auth = require('./auth') (app); // The (app) argument ensures that Express is available in the auth.js file as well
 const passport = require('passport');
@@ -25,12 +25,12 @@ require('./passport');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect( process.env.CONNECTION_URI, {
+mongoose.connect( process.env.CONNECTION_URI, {  // connect to Heroku
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
-// mongoose.connect("mongodb://127.0.0.1/cfDB", {
+// mongoose.connect("mongodb://127.0.0.1/cfDB", { // connect to Local Server
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
 // });
@@ -57,7 +57,7 @@ We’ll expect JSON in this format
 }
 */
 app.post("/users", [
-  check('Username', 'Username is required').isLength({min: 5}),
+  check('Username', 'Username is required').isLength({min: 5}), // server-side validation
   check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
   check('Password', 'Password is required').not().isEmpty(),
   check('Email', 'Email does not appear to be valid').isEmail()
