@@ -52,9 +52,9 @@ As a visual person, I kind of needed some time to make the invisible processes o
 
 ### Technologies used
 
-*JavaScript
-*Node.js
-*Mongoose
-*Express
-*React
+-JavaScript
+-Node.js
+-Mongoose
+-Express
+-React
 
