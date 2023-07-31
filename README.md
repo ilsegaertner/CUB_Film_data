@@ -14,6 +14,7 @@ CUB Film Data is an app built as part of my CareerFoundry's Full-Stack-Web-Devel
 The web app allows users to load information about specific arthouse movies, directors, and genres. Users are able to create an account, update their personal data, and create a list of favorite movies. 
 
 The API is published on [GitHub](https://github.com/ilsegaertner/CUB_Film_data).
+
 To see the hosted App, click [here](https://cub-film-data-dc72bcc7ff05.herokuapp.com/).
 
 ### Objective
