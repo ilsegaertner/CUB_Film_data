@@ -61,7 +61,7 @@ We’ll expect JSON in this format
 }
 */
 app.post("/users", [
-  check('Username', 'Username is required').isLength({min: 5}), // server-side validation
+  check('Username', 'Username has to be at least 5 characters long').isLength({min: 5}), // server-side validation
   check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
   check('Password', 'Password is required').not().isEmpty(),
   check('Email', 'Email does not appear to be valid').isEmail()
