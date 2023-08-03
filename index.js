@@ -43,7 +43,11 @@ app.use(
 app.use(morgan("dev")); //the morgan token how it logs to the terminal
 app.use(express.static("public")); //static files
 
-// NEW
+
+// Gets the default page
+app.get('/', (req, res) => {
+  res.send('Welcome to CUB Film Data!');
+  });
 
 // Add a User
 /* 

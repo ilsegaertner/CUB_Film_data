@@ -1,5 +1,6 @@
 node_modules/
 screenshots/
+clientside/
 
 # gitignore List from https://github.com/github/gitignore/blob/main/Node.gitignore
 
