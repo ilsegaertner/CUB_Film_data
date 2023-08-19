@@ -49,6 +49,11 @@ app.get("/", (req, res) => {
   res.send("Welcome to CUB Film Data!");
 });
 
+// Gets the login page
+app.get("/login", (req, res) => {
+  res.send("Login Page");
+});
+
 // Add a User
 /* 
 We’ll expect JSON in this format
