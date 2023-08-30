@@ -22,6 +22,7 @@ let auth = require("./auth")(app); // The (app) argument ensures that Express is
 const passport = require("passport");
 require("./passport");
 
+// app.use(express.json()); // new version for handling JSON data --> replaces bodyParser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -31,7 +32,8 @@ mongoose.connect(process.env.CONNECTION_URI, {
   useUnifiedTopology: true,
 });
 
-// mongoose.connect("mongodb://127.0.0.1/cfDB", { // connect to Local Server
+// mongoose.connect("mongodb://127.0.0.1/cfDB", {
+//   // connect to Local Server
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
 // });

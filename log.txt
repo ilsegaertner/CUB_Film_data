@@ -383,3 +383,14 @@ Timestamp: Wed Jun 28 2023 16:47:25 GMT+0200 (Mitteleuropäische Sommerzeit)
 ::1 - - [27/Jul/2023:12:45:37 +0000] "PUT /users/Hashe1?Username=Hashe1&Password=whynot12&Email=hashe1@gmail.com&Birthday=1970-02-23T00:00:00.000Z HTTP/1.1" 200 170
 ::1 - - [27/Jul/2023:12:46:04 +0000] "PUT /users/Hashe1?Username=Hashe1&Password=whynot12&Email=hashe1@gmail.com&Birthday=1970-02-23T00:00:00.000Z HTTP/1.1" 200 170
 ::1 - - [27/Jul/2023:12:46:28 +0000] "PUT /users/Hashe1?Username=Hashe1&Password=whynot12&Email=hashe1@gmail.com&Birthday=1970-02-23T00:00:00.000Z HTTP/1.1" 422 130
+127.0.0.1 - - [24/Aug/2023:06:35:58 +0000] "GET / HTTP/1.1" 200 25
+127.0.0.1 - - [24/Aug/2023:06:35:59 +0000] "GET /favicon.ico HTTP/1.1" 404 150
+127.0.0.1 - - [24/Aug/2023:06:37:10 +0000] "POST /user HTTP/1.1" 404 144
+127.0.0.1 - - [24/Aug/2023:06:37:25 +0000] "POST /user HTTP/1.1" 404 144
+127.0.0.1 - - [24/Aug/2023:06:37:32 +0000] "GET /user HTTP/1.1" 404 143
+127.0.0.1 - - [24/Aug/2023:06:38:08 +0000] "POST /user?Username=rerwer&Password=werwerwer HTTP/1.1" 404 144
+127.0.0.1 - - [24/Aug/2023:06:38:57 +0000] "POST /user?Username=rerwer&Password=werwerwer HTTP/1.1" 404 144
+127.0.0.1 - - [24/Aug/2023:06:39:23 +0000] "POST /users?Username=rerwer&Password=werwerwer HTTP/1.1" 201 222
+127.0.0.1 - - [24/Aug/2023:06:41:01 +0000] "GET /user HTTP/1.1" 404 143
+127.0.0.1 - - [24/Aug/2023:06:42:28 +0000] "POST /users?Username=Hermit2&Password=Mongolei2 HTTP/1.1" 400 19
+127.0.0.1 - - [24/Aug/2023:06:42:48 +0000] "POST /users?Username=Hermit2&Password=Mongolei2 HTTP/1.1" 201 222
