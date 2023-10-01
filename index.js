@@ -277,20 +277,32 @@ app.post(
   "/users/:Username/movies/:MovieID",
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
-    await Users.findOneAndUpdate(
-      { Username: req.params.Username },
-      {
-        $push: { FavoriteMovies: req.params.MovieID },
-      },
-      { new: true }
-    )
-      .then((updatedUser) => {
-        res.status(201).send("Success! A movie has been added.");
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500).send("Error: " + err);
+    try {
+      await Users.findOneAndUpdate(
+        { Username: req.params.Username },
+        {
+          $push: { FavoriteMovies: req.params.MovieID },
+        },
+        { new: true }
+      );
+
+      const updatedUser = await Users.findOne({
+        Username: req.params.Username,
       });
+      res.status(201).json(updatedUser);
+    } catch (error) {
+      console.error(error);
+      res
+        .status(500)
+        .json({ error: "Failed to add movie to favorites.", error });
+    }
+    // .then((updatedUser) => {
+    //   res.status(201).send("Success! A movie has been added.");
+    // })
+    // .catch((err) => {
+    //   console.error(err);
+    //   res.status(500).send("Error: " + err);
+    // });
   }
 );
 
