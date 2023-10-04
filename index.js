@@ -281,7 +281,7 @@ app.post(
       await Users.findOneAndUpdate(
         { Username: req.params.Username },
         {
-          $push: { FavoriteMovies: req.params.MovieID },
+          $push: { FavouriteMovies: req.params.MovieID },
         },
         { new: true }
       );
@@ -314,7 +314,7 @@ app.delete(
     await Users.findOneAndUpdate(
       { Username: req.params.Username },
       {
-        $pull: { FavoriteMovies: req.params.MovieID },
+        $pull: { FavouriteMovies: req.params.MovieID },
       },
       { new: true } // This line makes sure that the updated document is returned
     )
