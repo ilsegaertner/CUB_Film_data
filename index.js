@@ -258,6 +258,7 @@ app.put(
           Password: req.body.Password,
           Email: req.body.Email,
           Birthday: req.body.Birthday,
+          FavouriteMovies: req.body.FavouriteMovies,
         },
       },
       { new: true } // This line makes sure that the updated document is returned
