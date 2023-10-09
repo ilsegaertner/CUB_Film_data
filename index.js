@@ -14,7 +14,29 @@ const Genres = Models.Genre;
 const Directors = Models.Director;
 
 const cors = require("cors");
-app.use(cors()); // ensures that all domains are allowed to make requests to your API.
+let allowedOrigins = [
+  "http://localhost:8080",
+  "http://localhost:1234",
+  "http://cub-film-data.netlify.app",
+]; // ensures that these domains are allowed to make requests to your API.
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) === -1) {
+        // If a specific origin isn’t found on the list of allowed origins
+        let message =
+          "The CORS policy for this application does not allow access from origin " +
+          origin;
+        return callback(new Error(message), false);
+      }
+      return callback(null, true);
+    },
+  })
+);
+
+// app.use(cors()); // would ensure that all domains are allowed to make requests to your API.
 
 const { check, validationResult } = require("express-validator"); // for server-side validation
 
