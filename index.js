@@ -17,7 +17,7 @@ const cors = require("cors");
 let allowedOrigins = [
   "http://localhost:8080",
   "http://localhost:1234",
-  "http://cub-film-data.netlify.app",
+  "https://cub-film-data.netlify.app",
 ]; // ensures that these domains are allowed to make requests to your API.
 
 app.use(
