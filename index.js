@@ -172,6 +172,7 @@ app.get(
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     await Users.findOne({ Username: req.params.Username })
+      .select("-Password") // Exclude the "Password" field from the response
       .then((user) => {
         res.json(user);
       })
