@@ -18,6 +18,9 @@ let allowedOrigins = [
   "http://localhost:8080",
   "http://localhost:63239",
   "http://localhost:1234",
+  "http://localhost:3000",
+  "http://localhost:8000",
+  "http://localhost:9000",
   "https://cub-film-data.netlify.app",
 ]; // ensures that these domains are allowed to make requests to your API.
 
