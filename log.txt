@@ -394,3 +394,5 @@ Timestamp: Wed Jun 28 2023 16:47:25 GMT+0200 (Mitteleuropäische Sommerzeit)
 127.0.0.1 - - [24/Aug/2023:06:41:01 +0000] "GET /user HTTP/1.1" 404 143
 127.0.0.1 - - [24/Aug/2023:06:42:28 +0000] "POST /users?Username=Hermit2&Password=Mongolei2 HTTP/1.1" 400 19
 127.0.0.1 - - [24/Aug/2023:06:42:48 +0000] "POST /users?Username=Hermit2&Password=Mongolei2 HTTP/1.1" 201 222
+127.0.0.1 - - [23/Jan/2024:06:27:16 +0000] "GET / HTTP/1.1" 200 25
+127.0.0.1 - - [23/Jan/2024:06:27:16 +0000] "GET /favicon.ico HTTP/1.1" 404 150
