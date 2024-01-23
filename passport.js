@@ -31,7 +31,7 @@ passport.use(
             console.log("incorrect password");
             return callback(null, false, { message: "Incorrect password." });
           }
-          console.log("finished");
+          console.log("Login successful");
           return callback(null, user);
         })
         .catch((error) => {
