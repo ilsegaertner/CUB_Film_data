@@ -364,24 +364,20 @@ app.delete(
     await Users.findOneAndRemove({ Username: req.params.Username })
       .then((user) => {
         if (!user) {
-          res
-            .status(404)
-            .json({
-              success: false,
-              message: req.params.Username + " was not found",
-            });
+          res.status(404).json({
+            success: false,
+            message: req.params.Username + " was not found",
+          });
         } else {
-          res
-            .status(200)
-            .json({
-              success: true,
-              message: req.params.Username + " was deleted",
-            });
+          res.status(200).json({
+            success: true,
+            message: req.params.Username + " was deleted",
+          });
         }
       })
       .catch((err) => {
         console.error(err);
-        res.status(500).send("Error: " + err);
+        res.status(500).json({ success: false, error: "Error: " + err });
       });
   }
 );
