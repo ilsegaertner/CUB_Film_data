@@ -23,6 +23,8 @@ let allowedOrigins = [
   "http://localhost:9000",
   "http://localhost:4200",
   "https://cub-film-data.netlify.app",
+  "https://ilsegaertner.github.io/CUB-Film-Angular-client",
+  "https://ilsegaertner.github.io",
 ]; // ensures that these domains are allowed to make requests to your API.
 
 app.use(
