@@ -93,7 +93,7 @@ We’ll expect JSON in this format
 */
 
 /**
- * Add a new user.
+ * Add a new user / Registering
  * Endpoint URL: /users
  * Method: POST
  * Query Parameters: None
@@ -461,7 +461,7 @@ app.get(
  * Endpoint URL: /users/:Username
  * Method: PUT
  * Query Parameters: None
- * Request Body: JSON object with user data
+ * Request Body: None
  * Response Data Format: JSON object with updated user data
  * Example Request: PUT /users/MichaelMeier
  * Example Response:
@@ -630,7 +630,7 @@ app.delete(
  * Endpoint URL: /users/:Username
  * Method: DELETE
  * Query Parameters: None
- * Request Body:
+ * Request Body: None
  * Response Data Format: JSON object representing the removed user
  * Example Request: DELETE /users/MichaelMeier
  * Example Response:
