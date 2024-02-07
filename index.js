@@ -91,6 +91,42 @@ We’ll expect JSON in this format
   Birthday: Date
 }
 */
+
+/**
+ * Add a new user.
+ * Endpoint URL: /users
+ * Method: POST
+ * Query Parameters: None
+ * Request Body: JSON object with user data
+ * Response Data Format: JSON object representing the added user
+ * Example Request: POST /users
+ * Example Request Body:
+ * {
+ *     "Username": "user1",
+ *     "Password": "password123",
+ *     "Email": "user1@example.com",
+ *     "Birthday": "1990-01-01"
+ * }
+ * Example Response:
+ * {
+ *    "id": 1,
+ *     "username": "user1",
+ *     "email": "user1@example.com",
+ *     "birthday": "1990-01-01",
+ *     "favoriteMovies": ["12345", "67890"]
+ *}
+ * @param {Object} req - The request object.
+ * @param {Object} req.body - The request body.
+ * @param {string} req.body.Username - The username of the user.
+ * @param {string} req.body.Password - The password of the user.
+ * @param {string} req.body.Email - The email of the user.
+ * @param {Date} req.body.Birthday - The birthday of the user.
+ * @param {Object} res - The response object.
+ * @param {Function} res.status - Method to set the HTTP status code of the response.
+ * @param {Function} res.json - Method to send a JSON response.
+ * @returns {Promise} Promise representing the operation.
+ * @returns {Object} JSON response indicating success or failure.
+ */
 app.post(
   "/users",
   [
@@ -141,7 +177,36 @@ app.post(
   }
 );
 
-// Get all users
+/**
+ * Get all users.
+ * Retrieves information about all users.
+ * Endpoint URL: /users
+ * Method: GET
+ * Query Parameters: None
+ * Request Body: None
+ * Response Data Format: JSON array of user objects
+ * Example Request: GET /users
+ * Example Response:
+ * [
+ *   {
+ *     "Username": "user1",
+ *     "Email": "user1@example.com",
+ *     "Birthday": "1990-01-01",
+ *     "FavoriteMovies": ["12345", "67890"]
+ *   },
+ *   {
+ *     "Username": "user2",
+ *     "Email": "user2@example.com",
+ *     "Birthday": "1995-05-15",
+ *     "FavoriteMovies": ["23456", "78901"]
+ *   }
+ * ]
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @param {Function} res.status - Method to set the HTTP status code of the response.
+ * @param {Function} res.json - Method to send a JSON response.
+ * @returns {Promise} Promise representing the operation.
+ */
 app.get(
   "/users",
   passport.authenticate("jwt", { session: false }),
@@ -157,7 +222,52 @@ app.get(
   }
 );
 
-// Get all movies
+/**
+ * Get all movies
+ * Retrieves information about all movies.
+ * Endpoint URL: /movies
+ * Method: GET
+ * Query Parameters: None
+ * Request Body: None
+ * Response Data Format: JSON
+ * Example Request: GET /movies
+ * Example Response:
+ * [
+ *   {
+ *     "Title": "Movie 1",
+ *     "Genre": {
+ *        "Name": "Action",
+ *        "Description": "A description of the Action genre."
+ *      },
+ *     "Director": {
+ *        "Name": "The Wachowskis",
+ *        "Bio": "A biography of The Wachowskis.",
+ *        "Birth": 1945,
+ *        "Death": ""
+ *      },
+ *     "Year": 2021
+ *   },
+ *   {
+ *     "Title": "Movie 2",
+ *     "Genre": {
+ *        "Name": "Drama",
+ *        "Description": "A description of the Drama genre."
+ *      },
+ *     "Director": {
+ *        "Name": "Wim Wenders",
+ *        "Bio": "A biography of Wim Wenders.",
+ *        "Birth": 1945,
+ *        "Death": ""
+ *      },
+ *     "Year": 2020
+ *   }
+ * ]
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @param {Function} res.status - Method to set the HTTP status code of the response.
+ * @param {Function} res.json - Method to send a JSON response.
+ * @returns {Promise} Promise representing the operation.
+ */
 app.get(
   "/movies",
   passport.authenticate("jwt", { session: false }),
@@ -173,7 +283,29 @@ app.get(
   }
 );
 
-// Get a user by username
+/**
+ * Get a user by username
+ * Retrieves information about a specific user.
+ * Endpoint URL: /users/:Username
+ * Method: GET
+ * Query Parameters: None
+ * Request Body: None
+ * Response Data Format: JSON
+ * Example Request: GET /users/johndoe
+ * Example Response:
+ * {
+ *   "ID": 23,
+ *   "Username": "johndoe",
+ *   "Email": "john@example.com",
+ *   "Birthday": "1990-01-01",
+ *   "FavoriteMovies": ["12345", "67890"]
+ * }
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @param {Function} res.status - Method to set the HTTP status code of the response.
+ * @param {Function} res.json - Method to send a JSON response.
+ * @returns {Promise} Promise representing the operation.
+ */
 app.get(
   "/users/:Username",
   passport.authenticate("jwt", { session: false }),
@@ -190,7 +322,36 @@ app.get(
   }
 );
 
-// Get data by title
+/**
+ * Get data by title
+ * Retrieves information about a movie by its title.
+ * Endpoint URL: /movies/:Title
+ * Method: GET
+ * Query Parameters: None
+ * Request Body: None
+ * Response Data Format: JSON
+ * Example Request: GET /movies/The Matrix
+ * Example Response:
+ *   {
+ *     "Title": "The Matrix",
+ *     "Genre": {
+ *        "Name": "Action",
+ *        "Description": "A description of the Action genre."
+ *      },
+ *     "Director": {
+ *        "Name": "The Wachowskis",
+ *        "Bio": "A biography of The Wachowskis.",
+ *        "Birth": 1945,
+ *        "Death": ""
+ *      },
+ *     "Year": 1999
+ *   }
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @param {Function} res.status - Method to set the HTTP status code of the response.
+ * @param {Function} res.json - Method to send a JSON response.
+ * @returns {Promise} Promise representing the operation.
+ */
 app.get(
   "/movies/:Title",
   passport.authenticate("jwt", { session: false }),
@@ -206,7 +367,26 @@ app.get(
   }
 );
 
-// Get data about genre
+/**
+ * Get data about genre
+ * Retrieves information about a movie by its Genre name.
+ * Endpoint URL: /movies/genre/:Name
+ * Method: GET
+ * Query Parameters: None
+ * Request Body: None
+ * Response Data Format: JSON
+ * Example Request: GET /movies/genre/Drama
+ * Example Response:
+ *   {
+ *     "Name": "Genre",
+ *     "Description": "Drama movies depict realistic and emotionally charged stories that explore the complexities of human relationships and personal struggles. They often delve into themes such as love, loss, family dynamics, and personal growth. Drama films typically focus on character development and aim to evoke a wide range ot emotions from the audience."
+ *   }
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @param {Function} res.status - Method to set the HTTP status code of the response.
+ * @param {Function} res.json - Method to send a JSON response.
+ * @returns {Promise} Promise representing the operation.
+ */
 app.get(
   "/movies/genre/:Name",
   passport.authenticate("jwt", { session: false }),
@@ -225,7 +405,28 @@ app.get(
   }
 );
 
-// Get data about director
+/**
+ * Get data about director
+ * Retrieves information about a director by his/her name.
+ * Endpoint URL: /movies/director/:Name
+ * Method: GET
+ * Query Parameters: None
+ * Request Body: None
+ * Response Data Format: JSON
+ * Example Request: GET /movies/director/WimWenders
+ * Example Response:
+ *   {
+ *     "Name": "Wim Wenders",
+ *     "Description": "Wim Wenders, a German filmmaker, is renowned for his visually stunning films that often explore themes of identity, memory, and the search for meaning in a modern world. His works frequently blend elements of fiction and documentary, offering unique cinematic experiences.",
+ *     "Birth": 1945,
+ *     "Death": ""
+ *   }
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @param {Function} res.status - Method to set the HTTP status code of the response.
+ * @param {Function} res.json - Method to send a JSON response.
+ * @returns {Promise} Promise representing the operation.
+ */
 app.get(
   "/movies/director/:Name",
   passport.authenticate("jwt", { session: false }),
@@ -255,6 +456,33 @@ app.get(
   (required)
   Birthday: Date
 }*/
+/**
+ * Update a user's info, by username
+ * Endpoint URL: /users/:Username
+ * Method: PUT
+ * Query Parameters: None
+ * Request Body: JSON object with user data
+ * Response Data Format: JSON object with updated user data
+ * Example Request: PUT /users/MichaelMeier
+ * Example Response:
+ *   {
+ *     "Username": "MichaelMeier",
+ *     "Password": "MichaelMeier",
+ *     "Email": "MichaelMeier@example.com",
+ *     "Birthday": "1990-01-01",
+ *     "FavoriteMovies": ["12345", "67890"]
+ *   }
+ * @param {Object} req - The request object.
+ * @param {Object} req.body - The request body.
+ * @param {string} req.body.Username - The username of the user.
+ * @param {string} req.body.Password - The password of the user.
+ * @param {string} req.body.Email - The email of the user.
+ * @param {Date} req.body.Birthday - The birthday of the user.
+ * @param {Object} res - The response object.
+ * @param {Function} res.status - Method to set the HTTP status code of the response.
+ * @param {Function} res.json - Method to send a JSON response.
+ * @returns {Promise<Object>} Promise representing the operation. Resolves to the updated user object upon success.
+ */
 app.put(
   "/users/:Username",
   [
@@ -303,7 +531,30 @@ app.put(
   }
 );
 
-// Add a movie to a user's list of favorites (with premises instead of callbacks)
+/**
+ * Add a movie to a user's list of favorites
+ * Endpoint URL: /users/:Username/movies/:MovieID
+ * Method: POST
+ * Query Parameters: None
+ * Request Body: None
+ * Response Data Format: JSON object with updated user data
+ * Example Request: POST /users/MichaelMeier/movies/23
+ * Example Response:
+ *   {
+ *     "Username": "MichaelMeier",
+ *     "Password": "MichaelMeier",
+ *     "Email": "MichaelMeier@example.com",
+ *     "Birthday": "1990-01-01",
+ *     "FavouriteMovies": ["12345", "67890", "23"]
+ *   }
+ * @param {Object} req - The request object.
+ * @param {string} req.params.Username - The username of the user.
+ * @param {string} req.params.MovieID - The ID of the movie to add to the user's favorites.
+ * @param {Object} res - The response object.
+ * @param {Function} res.status - Method to set the HTTP status code of the response.
+ * @param {Function} res.json - Method to send a JSON response.
+ * @returns {Promise} Promise representing the operation.
+ */
 app.post(
   "/users/:Username/movies/:MovieID",
   passport.authenticate("jwt", { session: false }),
@@ -327,17 +578,33 @@ app.post(
         .status(500)
         .json({ error: "Failed to add movie to favorites.", error });
     }
-    // .then((updatedUser) => {
-    //   res.status(201).send("Success! A movie has been added.");
-    // })
-    // .catch((err) => {
-    //   console.error(err);
-    //   res.status(500).send("Error: " + err);
-    // });
   }
 );
 
-// Remove a movie from a user's list of favorites (with premises instead of callbacks)
+/**
+ * Remove a movie from a user's list of favorites (with premises instead of callbacks)
+ * Endpoint URL: /users/:Username/movies/:MovieID
+ * Method: DELETE
+ * Query Parameters: None
+ * Request Body: None
+ * Response Data Format: JSON object with updated user data
+ * Example Request: POST /users/MichaelMeier/movies/67890
+ * Example Response:
+ *   {
+ *     "Username": "MichaelMeier",
+ *     "Password": "MichaelMeier",
+ *     "Email": "MichaelMeier@example.com",
+ *     "Birthday": "1990-01-01",
+ *     "FavouriteMovies": ["12345", "23"]
+ *   }
+ * @param {Object} req - The request object.
+ * @param {string} req.params.Username - The username of the user.
+ * @param {string} req.params.MovieID - The ID of the movie to delete from the user's favourites.
+ * @param {Object} res - The response object.
+ * @param {Function} res.status - Method to set the HTTP status code of the response.
+ * @param {Function} res.json - Method to send a JSON response.
+ * @returns {Promise} Promise representing the operation.
+ */
 app.delete(
   "/users/:Username/movies/:MovieID",
   passport.authenticate("jwt", { session: false }),
@@ -359,7 +626,29 @@ app.delete(
   }
 );
 
-// Delete a user by username
+/**
+ * Endpoint URL: /users/:Username
+ * Method: DELETE
+ * Query Parameters: None
+ * Request Body:
+ * Response Data Format: JSON object representing the removed user
+ * Example Request: DELETE /users/MichaelMeier
+ * Example Response:
+ * {
+ *    "id": 1,
+ *     "username": "MichaelMeier",
+ *     "email": "MichaelMeier@example.com",
+ *     "birthday": "1990-01-01",
+ *     "favoriteMovies": ["12345", "67890"]
+ *}
+ * Delete a user by username
+ * @param {Object} req - The request object.
+ * @param {string} req.params.Username - The username of the user to delete.
+ * @param {Object} res - The response object.
+ * @param {Function} res.status - Method to set the HTTP status code of the response.
+ * @param {Function} res.json - Method to send a JSON response.
+ * @returns {Promise} Promise representing the operation.
+ */
 app.delete(
   "/users/:Username",
   passport.authenticate("jwt", { session: false }),
