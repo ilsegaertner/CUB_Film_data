@@ -113,7 +113,7 @@ We’ll expect JSON in this format
  *     "username": "user1",
  *     "email": "user1@example.com",
  *     "birthday": "1990-01-01",
- *     "favoriteMovies": ["12345", "67890"]
+ *     "favouriteMovies": ["12345", "67890"]
  *}
  * @function
  * @name createUser
@@ -308,7 +308,7 @@ app.get(
  *   "Username": "johndoe",
  *   "Email": "john@example.com",
  *   "Birthday": "1990-01-01",
- *   "FavoriteMovies": ["12345", "67890"]
+ *   "FavouriteMovies": ["12345", "67890"]
  * }
  * @function
  * @name getUserByUsername
@@ -497,7 +497,7 @@ app.get(
  *     "Password": "MichaelMeier",
  *     "Email": "MichaelMeier@example.com",
  *     "Birthday": "1990-01-01",
- *     "FavoriteMovies": ["12345", "67890"]
+ *     "FavouriteMovies": ["12345", "67890"]
  *   }
  * @function
  * @name updateUser
@@ -565,7 +565,7 @@ app.put(
 );
 
 /**
- * Add a movie to a user's list of favorites
+ * Add a movie to a user's list of favourites
  * Endpoint URL: /users/:Username/movies/:MovieID
  * Method: POST
  * Query Parameters: None
@@ -584,7 +584,7 @@ app.put(
  * @name addFavouriteMovie
  * @param {Object} req - The request object.
  * @param {string} req.params.Username - The username of the user.
- * @param {string} req.params.MovieID - The ID of the movie to add to the user's favorites.
+ * @param {string} req.params.MovieID - The ID of the movie to add to the user's favourites.
  * @param {Object} res - The response object.
  * @param {Function} res.status - Method to set the HTTP status code of the response.
  * @param {Function} res.json - Method to send a JSON response.
@@ -612,13 +612,13 @@ app.post(
       console.error(error);
       res
         .status(500)
-        .json({ error: "Failed to add movie to favorites.", error });
+        .json({ error: "Failed to add movie to favourites.", error });
     }
   }
 );
 
 /**
- * Remove a movie from a user's list of favorites (with premises instead of callbacks)
+ * Remove a movie from a user's list of favourites (with premises instead of callbacks)
  * Endpoint URL: /users/:Username/movies/:MovieID
  * Method: DELETE
  * Query Parameters: None
@@ -634,7 +634,7 @@ app.post(
  *     "FavouriteMovies": ["12345", "23"]
  *   }
  * @function
- * @name removeFavoriteMovie
+ * @name removeFavouriteMovie
  * @param {Object} req - The request object.
  * @param {string} req.params.Username - The username of the user.
  * @param {string} req.params.MovieID - The ID of the movie to delete from the user's favourites.
@@ -679,7 +679,7 @@ app.delete(
  *     "username": "MichaelMeier",
  *     "email": "MichaelMeier@example.com",
  *     "birthday": "1990-01-01",
- *     "favoriteMovies": ["12345", "67890"]
+ *     "favouriteMovies": ["12345", "67890"]
  *}
  * Delete a user by username
  * @function
