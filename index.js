@@ -115,6 +115,8 @@ We’ll expect JSON in this format
  *     "birthday": "1990-01-01",
  *     "favoriteMovies": ["12345", "67890"]
  *}
+ * @function
+ * @name createUser
  * @param {Object} req - The request object.
  * @param {Object} req.body - The request body.
  * @param {string} req.body.Username - The username of the user.
@@ -124,8 +126,8 @@ We’ll expect JSON in this format
  * @param {Object} res - The response object.
  * @param {Function} res.status - Method to set the HTTP status code of the response.
  * @param {Function} res.json - Method to send a JSON response.
- * @returns {Promise} Promise representing the operation.
- * @returns {Object} JSON response indicating success or failure.
+ * @returns {Promise}  A Promise that resolves when the user creation process is complete.
+ * @returns {Object} newUser - The newly created user object. Sent in the response on success.
  */
 app.post(
   "/users",
@@ -201,11 +203,15 @@ app.post(
  *     "FavoriteMovies": ["23456", "78901"]
  *   }
  * ]
+ * @function
+ * @name getAllUsers
  * @param {Object} req - The request object.
  * @param {Object} res - The response object.
  * @param {Function} res.status - Method to set the HTTP status code of the response.
  * @param {Function} res.json - Method to send a JSON response.
- * @returns {Promise} Promise representing the operation.
+ * @throws {Error} - If there is an unexpected error during the process or if permission is denied.
+ * @returns {Promise} A Promise that resolves when the movie request process is complete.
+ * @returns {Object}[] allUsers - The array of all users in the database.
  */
 app.get(
   "/users",
@@ -262,11 +268,15 @@ app.get(
  *     "Year": 2020
  *   }
  * ]
+ * @function
+ * @name getAllMovies
  * @param {Object} req - The request object.
  * @param {Object} res - The response object.
  * @param {Function} res.status - Method to set the HTTP status code of the response.
  * @param {Function} res.json - Method to send a JSON response.
- * @returns {Promise} Promise representing the operation.
+ * @throws {Error} - If there is an unexpected error during the process or if permission is denied.
+ * @returns {Promise} A Promise that resolves when the movie request process is complete.
+ * @returns {Object}[] allMovies - The array of all movies in the database.
  */
 app.get(
   "/movies",
@@ -300,11 +310,14 @@ app.get(
  *   "Birthday": "1990-01-01",
  *   "FavoriteMovies": ["12345", "67890"]
  * }
+ * @function
+ * @name getUserByUsername
  * @param {Object} req - The request object.
  * @param {Object} res - The response object.
  * @param {Function} res.status - Method to set the HTTP status code of the response.
  * @param {Function} res.json - Method to send a JSON response.
- * @returns {Promise} Promise representing the operation.
+ * @throws {Error} - If there is an unexpected error during the process or if permission is denied.
+ * @returns {Promise} A Promise that resolves when the userdata is successfully fetched.
  */
 app.get(
   "/users/:Username",
@@ -346,11 +359,16 @@ app.get(
  *      },
  *     "Year": 1999
  *   }
+ * @function
+ * @name getMovie
  * @param {Object} req - The request object.
  * @param {Object} res - The response object.
  * @param {Function} res.status - Method to set the HTTP status code of the response.
  * @param {Function} res.json - Method to send a JSON response.
- * @returns {Promise} Promise representing the operation.
+ * @throws {Error} - If there is an unexpected error during the process or if permission is denied.
+ * @returns {Promise} - A Promise that resolves when the movie request process is complete.
+ * @returns {Object} reqMovie - The object containing the data for the requested movie.
+
  */
 app.get(
   "/movies/:Title",
@@ -381,11 +399,16 @@ app.get(
  *     "Name": "Genre",
  *     "Description": "Drama movies depict realistic and emotionally charged stories that explore the complexities of human relationships and personal struggles. They often delve into themes such as love, loss, family dynamics, and personal growth. Drama films typically focus on character development and aim to evoke a wide range ot emotions from the audience."
  *   }
+ * @function
+ * @name getGenre
  * @param {Object} req - The request object.
  * @param {Object} res - The response object.
  * @param {Function} res.status - Method to set the HTTP status code of the response.
  * @param {Function} res.json - Method to send a JSON response.
- * @returns {Promise} Promise representing the operation.
+ * @returns {Promise} - A Promise that resolves when the genre request process is complete.
+ *  @throws {Error} - If there is an unexpected error during the process or if permission is denied.
+ * @returns {Object} reqGenre - The object containing the data for the requested genre.
+
  */
 app.get(
   "/movies/genre/:Name",
@@ -421,11 +444,15 @@ app.get(
  *     "Birth": 1945,
  *     "Death": ""
  *   }
+ * @function
+ * @name getDirector
  * @param {Object} req - The request object.
  * @param {Object} res - The response object.
  * @param {Function} res.status - Method to set the HTTP status code of the response.
  * @param {Function} res.json - Method to send a JSON response.
- * @returns {Promise} Promise representing the operation.
+ *  @throws {Error} - If there is an unexpected error during the process or if permission is denied.
+ * @returns {Object} reqDirector - The object containing the data for the requested director.
+ * @returns {Promise} - A Promise that resolves when the director request process is complete.
  */
 app.get(
   "/movies/director/:Name",
@@ -472,6 +499,8 @@ app.get(
  *     "Birthday": "1990-01-01",
  *     "FavoriteMovies": ["12345", "67890"]
  *   }
+ * @function
+ * @name updateUser
  * @param {Object} req - The request object.
  * @param {Object} req.body - The request body.
  * @param {string} req.body.Username - The username of the user.
@@ -481,6 +510,10 @@ app.get(
  * @param {Object} res - The response object.
  * @param {Function} res.status - Method to set the HTTP status code of the response.
  * @param {Function} res.json - Method to send a JSON response.
+ * @throws {Error} - If there is an unexpected error during the process or if permission is denied.
+ * @fires {Object} updatedUser - The updated user object sent in the response on success.
+ * @description
+ *   Expects at least one updatable field (username, password, email, birthday) in the request body.
  * @returns {Promise<Object>} Promise representing the operation. Resolves to the updated user object upon success.
  */
 app.put(
@@ -547,14 +580,17 @@ app.put(
  *     "Birthday": "1990-01-01",
  *     "FavouriteMovies": ["12345", "67890", "23"]
  *   }
+ * @function
+ * @name addFavouriteMovie
  * @param {Object} req - The request object.
  * @param {string} req.params.Username - The username of the user.
  * @param {string} req.params.MovieID - The ID of the movie to add to the user's favorites.
  * @param {Object} res - The response object.
  * @param {Function} res.status - Method to set the HTTP status code of the response.
  * @param {Function} res.json - Method to send a JSON response.
- * @returns {Promise} Promise representing the operation.
- */
+ * @throws {Error} - If there is an unexpected error during the user creation process.
+ * @returns {Promise} A Promise that resolves when the movie addition process is complete.
+ * @returns {Object} updatedUser - The updated user object (including the added movie) sent in the response on success.
 app.post(
   "/users/:Username/movies/:MovieID",
   passport.authenticate("jwt", { session: false }),
@@ -597,12 +633,16 @@ app.post(
  *     "Birthday": "1990-01-01",
  *     "FavouriteMovies": ["12345", "23"]
  *   }
+ * @function
+ * @name removeFavoriteMovie
  * @param {Object} req - The request object.
  * @param {string} req.params.Username - The username of the user.
  * @param {string} req.params.MovieID - The ID of the movie to delete from the user's favourites.
  * @param {Object} res - The response object.
  * @param {Function} res.status - Method to set the HTTP status code of the response.
  * @param {Function} res.json - Method to send a JSON response.
+ * @throws {Error} - If there is an unexpected error during the process or if permission is denied.
+ * @fires {Object} updatedUser - The updated user object (after removing the movie) sent in the response on success.
  * @returns {Promise} Promise representing the operation.
  */
 app.delete(
@@ -642,12 +682,16 @@ app.delete(
  *     "favoriteMovies": ["12345", "67890"]
  *}
  * Delete a user by username
+ * @function
+ * @name deleteUser
  * @param {Object} req - The request object.
  * @param {string} req.params.Username - The username of the user to delete.
  * @param {Object} res - The response object.
  * @param {Function} res.status - Method to set the HTTP status code of the response.
  * @param {Function} res.json - Method to send a JSON response.
- * @returns {Promise} Promise representing the operation.
+ * @throws {Error} - If there is an unexpected error during the process or if permission is denied.
+ * @fires {string} message - A message indicating the result of the user deletion process.
+ * @returns {Promise} - A Promise that resolves when the user deletion process is complete.
  */
 app.delete(
   "/users/:Username",
