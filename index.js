@@ -91,27 +91,29 @@ We’ll expect JSON in this format
   Birthday: Date
 }
 */
-
 /**
  * Add a new user / Registering
  *
- * - Endpoint URL: /users
- * - Method: POST
- * - Query Parameters: None
- * - Request Body: JSON object with user data
- * - Response Data Format: JSON object representing the added user
+ * - **Endpoint URL**: `/users`
+ * - **Method**: POST
+ * - **Query Parameters**: None
+ * - **Request Body**: JSON object with user data
+ * - **Response Data Format**: JSON object representing the added user
  *
- * Example Request: POST /users
+ * **Example Request**: `POST /users`
  *
- * Example Request Body:
+ * **Example Request Body**:
+ * ```json
  * {
  *    "Username": "user1",
  *    "Password": "password123",
  *    "Email": "user1@example.com",
  *    "Birthday": "1990-01-01"
  * }
+ * ```
  *
- * Example Response:
+ * **Example Response**:
+ * ```json
  * {
  *    "Id": 1,
  *    "Username": "user1",
@@ -119,7 +121,7 @@ We’ll expect JSON in this format
  *    "Birthday": "1990-01-01",
  *    "FavoriteMovies": ["12345", "67890"]
  * }
- *
+ * ```
  * @function
  * @name createUser
  * @param {Object} req - The request object.
@@ -188,15 +190,16 @@ app.post(
  * Get all users.
  * Retrieves information about all users.
  *
- * - Endpoint URL: /users
- * - Method: GET
- * - Query Parameters: None
- * - Request Body: None
- * - Response Data Format: JSON array of user objects
+ * - **Endpoint URL**: `/users`
+ * - **Method**: GET
+ * - **Query Parameters**: None
+ * - **Request Body**: None
+ * - **Response Data Format**: JSON array of user objects
  *
- * Example Request: GET /users
+ * **Example Request**: `GET /users`
  *
- * Example Response:
+ * **Example Response**:
+ * ```json
  * [
  *   {
  *     "Username": "user1",
@@ -211,7 +214,7 @@ app.post(
  *     "FavoriteMovies": ["23456", "78901"]
  *   }
  * ]
- *
+ * ```
  * @function
  * @name getAllUsers
  * @param {Object} req - The request object.
@@ -238,18 +241,19 @@ app.get(
 );
 
 /**
- * Get all movies
+ * Get all movies.
  * Retrieves information about all movies.
  *
- * - Endpoint URL: /movies
- * - Method: GET
- * - Query Parameters: None
- * - Request Body: None
- * - Response Data Format: JSON array of movie objects
+ * - **Endpoint URL**: `/movies`
+ * - **Method**: GET
+ * - **Query Parameters**: None
+ * - **Request Body**: None
+ * - **Response Data Format**: JSON
  *
- * Example Request: GET /movies
+ * **Example Request**: `GET /movies`
  *
- * Example Response:
+ * **Example Response**:
+ * ```json
  * [
  *   {
  *     "Title": "Movie 1",
@@ -280,7 +284,7 @@ app.get(
  *     "Year": 2020
  *   }
  * ]
- *
+ * ```
  * @function
  * @name getAllMovies
  * @param {Object} req - The request object.
@@ -307,18 +311,19 @@ app.get(
 );
 
 /**
- * Get a user by username
+ * Get a user by username.
  * Retrieves information about a specific user.
  *
- * - Endpoint URL: /users/:Username
- * - Method: GET
- * - Query Parameters: None
- * - Request Body: None
- * - Response Data Format: JSON object representing the user
+ * - **Endpoint URL**: `/users/:Username`
+ * - **Method**: GET
+ * - **Query Parameters**: None
+ * - **Request Body**: None
+ * - **Response Data Format**: JSON
  *
- * Example Request: GET /users/johndoe
+ * **Example Request**: `GET /users/johndoe`
  *
- * Example Response:
+ * **Example Response**:
+ * ```json
  * {
  *   "ID": 23,
  *   "Username": "johndoe",
@@ -326,7 +331,7 @@ app.get(
  *   "Birthday": "1990-01-01",
  *   "FavouriteMovies": ["12345", "67890"]
  * }
- *
+ * ```
  * @function
  * @name getUserByUsername
  * @param {Object} req - The request object.
@@ -356,15 +361,16 @@ app.get(
  * Get data by title
  * Retrieves information about a movie by its title.
  * 
- * - Endpoint URL: /movies/:Title
- * - Method: GET
- * - Query Parameters: None
- * - Request Body: None
- * - Response Data Format: JSON object representing the movie
+ * - **Endpoint URL**: `/movies/:Title`
+ * - **Method**: GET
+ * - **Query Parameters**: None
+ * - **Request Body**: None
+ * - **Response Data Format**: JSON object representing the movie
  * 
- * Example Request: GET /movies/The Matrix
+ * **Example Request**: `GET /movies/The Matrix`
  * 
- * Example Response:
+ * **Example Response**:
+ * ```json
  * {
  *   "Title": "The Matrix",
  *   "Genre": {
@@ -379,7 +385,7 @@ app.get(
  *    },
  *   "Year": 1999
  * }
- * 
+ * ```
  * @function
  * @name getMovie
  * @param {Object} req - The request object.
@@ -405,25 +411,25 @@ app.get(
       });
   }
 );
-
 /**
  * Get data about genre
  * Retrieves information about a movie by its Genre name.
  *
- * - Endpoint URL: /movies/genre/:Name
- * - Method: GET
- * - Query Parameters: None
- * - Request Body: None
- * - Response Data Format: JSON object representing the genre
+ * - **Endpoint URL**: `/movies/genre/:Name`
+ * - **Method**: GET
+ * - **Query Parameters**: None
+ * - **Request Body**: None
+ * - **Response Data Format**: JSON object representing the genre
  *
- * Example Request: GET /movies/genre/Drama
+ * **Example Request**: `GET /movies/genre/Drama`
  *
- * Example Response:
+ * **Example Response**:
+ * ```json
  * {
  *   "Name": "Genre",
  *   "Description": "Drama movies depict realistic and emotionally charged stories that explore the complexities of human relationships and personal struggles. They often delve into themes such as love, loss, family dynamics, and personal growth. Drama films typically focus on character development and aim to evoke a wide range of emotions from the audience."
  * }
- *
+ * ```
  * @function
  * @name getGenre
  * @param {Object} req - The request object.
@@ -456,22 +462,23 @@ app.get(
  * Get data about director
  * Retrieves information about a director by his/her name.
  *
- * - Endpoint URL: /movies/director/:Name
- * - Method: GET
- * - Query Parameters: None
- * - Request Body: None
- * - Response Data Format: JSON object representing the director
+ * - **Endpoint URL**: `/movies/director/:Name`
+ * - **Method**: GET
+ * - **Query Parameters**: None
+ * - **Request Body**: None
+ * - **Response Data Format**: JSON object representing the director
  *
- * Example Request: GET /movies/director/WimWenders
+ * **Example Request**: `GET /movies/director/WimWenders`
  *
- * Example Response:
+ * **Example Response**:
+ * ```json
  * {
  *   "Name": "Wim Wenders",
  *   "Description": "Wim Wenders, a German filmmaker, is renowned for his visually stunning films that often explore themes of identity, memory, and the search for meaning in a modern world. His works frequently blend elements of fiction and documentary, offering unique cinematic experiences.",
  *   "Birth": 1945,
  *   "Death": ""
  * }
- *
+ * ```
  * @function
  * @name getDirector
  * @param {Object} req - The request object.
@@ -515,15 +522,16 @@ app.get(
 /**
  * Update a user's info, by username
  *
- * - Endpoint URL: /users/:Username
- * - Method: PUT
- * - Query Parameters: None
- * - Request Body: JSON object with user data to be updated
- * - Response Data Format: JSON object with updated user data
+ * - **Endpoint URL**: `/users/:Username`
+ * - **Method**: PUT
+ * - **Query Parameters**: None
+ * - **Request Body**: JSON object with user data to be updated
+ * - **Response Data Format**: JSON object with updated user data
  *
- * Example Request: PUT /users/MichaelMeier
+ * **Example Request**: `PUT /users/MichaelMeier`
  *
- * Example Response:
+ * **Example Response**:
+ * ```json
  * {
  *   "Username": "MichaelMeier",
  *   "Password": "MichaelMeier",
@@ -531,7 +539,7 @@ app.get(
  *   "Birthday": "1990-01-01",
  *   "FavouriteMovies": ["12345", "67890"]
  * }
- *
+ * ```
  * @function
  * @name updateUser
  * @param {Object} req - The request object.
@@ -601,15 +609,16 @@ app.put(
 /**
  * Add a movie to a user's list of favourites
  *
- * - Endpoint URL: /users/:Username/movies/:MovieID
- * - Method: POST
- * - Query Parameters: None
- * - Request Body: None
- * - Response Data Format: JSON object with updated user data
+ * - **Endpoint URL**: `/users/:Username/movies/:MovieID`
+ * - **Method**: POST
+ * - **Query Parameters**: None
+ * - **Request Body**: None
+ * - **Response Data Format**: JSON object with updated user data
  *
- * Example Request: POST /users/MichaelMeier/movies/23
+ * **Example Request**: `POST /users/MichaelMeier/movies/23`
  *
- * Example Response:
+ * **Example Response**:
+ * ```json
  * {
  *   "Username": "MichaelMeier",
  *   "Password": "MichaelMeier",
@@ -617,7 +626,7 @@ app.put(
  *   "Birthday": "1990-01-01",
  *   "FavouriteMovies": ["12345", "67890", "23"]
  * }
- *
+ * ```
  * @function
  * @name addFavouriteMovie
  * @param {Object} req - The request object.
@@ -655,19 +664,19 @@ app.post(
     }
   }
 );
-
 /**
  * Remove a movie from a user's list of favourites (with promises instead of callbacks)
  *
- * - Endpoint URL: /users/:Username/movies/:MovieID
- * - Method: DELETE
- * - Query Parameters: None
- * - Request Body: None
- * - Response Data Format: JSON object with updated user data
+ * - **Endpoint URL**: `/users/:Username/movies/:MovieID`
+ * - **Method**: DELETE
+ * - **Query Parameters**: None
+ * - **Request Body**: None
+ * - **Response Data Format**: JSON object with updated user data
  *
- * Example Request: DELETE /users/MichaelMeier/movies/67890
+ * **Example Request**: `DELETE /users/MichaelMeier/movies/67890`
  *
- * Example Response:
+ * **Example Response**:
+ * ```json
  * {
  *   "Username": "MichaelMeier",
  *   "Password": "MichaelMeier",
@@ -675,7 +684,7 @@ app.post(
  *   "Birthday": "1990-01-01",
  *   "FavouriteMovies": ["12345", "23"]
  * }
- *
+ * ```
  * @function
  * @name removeFavouriteMovie
  * @param {Object} req - The request object.

@@ -108,28 +108,45 @@
     
 
     
+    <p class="summary"><p>Add a movie to a user's list of favourites</p>
+<ul>
+<li>Endpoint URL: /users/:Username/movies/:MovieID</li>
+<li>Method: POST</li>
+<li>Query Parameters: None</li>
+<li>Request Body: None</li>
+<li>Response Data Format: JSON object with updated user data</li>
+</ul>
+<p>Example Request: POST /users/MichaelMeier/movies/23</p>
+<p>Example Response:
+{
+&quot;Username&quot;: &quot;MichaelMeier&quot;,
+&quot;Password&quot;: &quot;MichaelMeier&quot;,
+&quot;Email&quot;: &quot;MichaelMeier@example.com&quot;,
+&quot;Birthday&quot;: &quot;1990-01-01&quot;,
+&quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;, &quot;23&quot;]
+}</p>.</p>
+    
 
 
 
 <div class="description">
-    Add a movie to a user's list of favourites
-
-- Endpoint URL: /users/:Username/movies/:MovieID
-- Method: POST
-- Query Parameters: None
-- Request Body: None
-- Response Data Format: JSON object with updated user data
-
-Example Request: POST /users/MichaelMeier/movies/23
-
-Example Response:
+    <p>Add a movie to a user's list of favourites</p>
+<ul>
+<li>Endpoint URL: /users/:Username/movies/:MovieID</li>
+<li>Method: POST</li>
+<li>Query Parameters: None</li>
+<li>Request Body: None</li>
+<li>Response Data Format: JSON object with updated user data</li>
+</ul>
+<p>Example Request: POST /users/MichaelMeier/movies/23</p>
+<p>Example Response:
 {
-  "Username": "MichaelMeier",
-  "Password": "MichaelMeier",
-  "Email": "MichaelMeier@example.com",
-  "Birthday": "1990-01-01",
-  "FavouriteMovies": ["12345", "67890", "23"]
-}
+&quot;Username&quot;: &quot;MichaelMeier&quot;,
+&quot;Password&quot;: &quot;MichaelMeier&quot;,
+&quot;Email&quot;: &quot;MichaelMeier@example.com&quot;,
+&quot;Birthday&quot;: &quot;1990-01-01&quot;,
+&quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;, &quot;23&quot;]
+}</p>
 </div>
 
 
@@ -181,7 +198,7 @@ Example Response:
 
             
 
-            <td class="description last">The request object.
+            <td class="description last"><p>The request object.</p>
                 <h6>Properties</h6>
                 
 
@@ -223,7 +240,7 @@ Example Response:
 
             
 
-            <td class="description last">The username of the user.</td>
+            <td class="description last"><p>The username of the user.</p></td>
         </tr>
 
     
@@ -246,7 +263,7 @@ Example Response:
 
             
 
-            <td class="description last">The ID of the movie to add to the user's favourites.</td>
+            <td class="description last"><p>The ID of the movie to add to the user's favourites.</p></td>
         </tr>
 
     
@@ -276,7 +293,7 @@ Example Response:
 
             
 
-            <td class="description last">The response object.
+            <td class="description last"><p>The response object.</p>
                 <h6>Properties</h6>
                 
 
@@ -318,7 +335,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to set the HTTP status code of the response.</td>
+            <td class="description last"><p>Method to set the HTTP status code of the response.</p></td>
         </tr>
 
     
@@ -341,7 +358,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to send a JSON response.</td>
+            <td class="description last"><p>Method to send a JSON response.</p></td>
         </tr>
 
     
@@ -419,7 +436,9 @@ Example Response:
 <dl>
     <dt>
         <div class="param-desc">
-        - If there is an unexpected error during the user creation process.
+        <ul>
+<li>If there is an unexpected error during the user creation process.</li>
+</ul>
         </div>
     </dt>
     <dd></dd>
@@ -447,7 +466,7 @@ Example Response:
 <ul>
         <li>
 <div class="param-desc">
-    A Promise that resolves when the movie addition process is complete.
+    <p>A Promise that resolves when the movie addition process is complete.</p>
 </div>
 
 
@@ -467,7 +486,7 @@ Example Response:
     
         <li>
 <div class="param-desc">
-    updatedUser - The updated user object (including the added movie) sent in the response on success.
+    <p>updatedUser - The updated user object (including the added movie) sent in the response on success.</p>
 </div>
 
 
@@ -500,36 +519,59 @@ Example Response:
     
 
     
+    <p class="summary"><p>Add a new user / Registering</p>
+<ul>
+<li>Endpoint URL: /users</li>
+<li>Method: POST</li>
+<li>Query Parameters: None</li>
+<li>Request Body: JSON object with user data</li>
+<li>Response Data Format: JSON object representing the added user</li>
+</ul>
+<p>Example Request: POST /users</p>
+<p>Example Request Body:
+{
+&quot;Username&quot;: &quot;user1&quot;,
+&quot;Password&quot;: &quot;password123&quot;,
+&quot;Email&quot;: &quot;user1@example.com&quot;,
+&quot;Birthday&quot;: &quot;1990-01-01&quot;
+}</p>
+<p>Example Response:
+{
+&quot;Id&quot;: 1,
+&quot;Username&quot;: &quot;user1&quot;,
+&quot;Email&quot;: &quot;user1@example.com&quot;,
+&quot;Birthday&quot;: &quot;1990-01-01&quot;,
+&quot;FavoriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;]
+}</p>.</p>
+    
 
 
 
 <div class="description">
-    Add a new user / Registering
-
-- Endpoint URL: /users
-- Method: POST
-- Query Parameters: None
-- Request Body: JSON object with user data
-- Response Data Format: JSON object representing the added user
-
-Example Request: POST /users
-
-Example Request Body:
+    <p>Add a new user / Registering</p>
+<ul>
+<li>Endpoint URL: /users</li>
+<li>Method: POST</li>
+<li>Query Parameters: None</li>
+<li>Request Body: JSON object with user data</li>
+<li>Response Data Format: JSON object representing the added user</li>
+</ul>
+<p>Example Request: POST /users</p>
+<p>Example Request Body:
 {
-   "Username": "user1",
-   "Password": "password123",
-   "Email": "user1@example.com",
-   "Birthday": "1990-01-01"
-}
-
-Example Response:
+&quot;Username&quot;: &quot;user1&quot;,
+&quot;Password&quot;: &quot;password123&quot;,
+&quot;Email&quot;: &quot;user1@example.com&quot;,
+&quot;Birthday&quot;: &quot;1990-01-01&quot;
+}</p>
+<p>Example Response:
 {
-   "Id": 1,
-   "Username": "user1",
-   "Email": "user1@example.com",
-   "Birthday": "1990-01-01",
-   "FavoriteMovies": ["12345", "67890"]
-}
+&quot;Id&quot;: 1,
+&quot;Username&quot;: &quot;user1&quot;,
+&quot;Email&quot;: &quot;user1@example.com&quot;,
+&quot;Birthday&quot;: &quot;1990-01-01&quot;,
+&quot;FavoriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;]
+}</p>
 </div>
 
 
@@ -581,7 +623,7 @@ Example Response:
 
             
 
-            <td class="description last">The request object.
+            <td class="description last"><p>The request object.</p>
                 <h6>Properties</h6>
                 
 
@@ -623,7 +665,7 @@ Example Response:
 
             
 
-            <td class="description last">The request body.
+            <td class="description last"><p>The request body.</p>
                 <h6>Properties</h6>
                 
 
@@ -665,7 +707,7 @@ Example Response:
 
             
 
-            <td class="description last">The username of the user.</td>
+            <td class="description last"><p>The username of the user.</p></td>
         </tr>
 
     
@@ -688,7 +730,7 @@ Example Response:
 
             
 
-            <td class="description last">The password of the user.</td>
+            <td class="description last"><p>The password of the user.</p></td>
         </tr>
 
     
@@ -711,7 +753,7 @@ Example Response:
 
             
 
-            <td class="description last">The email of the user.</td>
+            <td class="description last"><p>The email of the user.</p></td>
         </tr>
 
     
@@ -734,7 +776,7 @@ Example Response:
 
             
 
-            <td class="description last">The birthday of the user.</td>
+            <td class="description last"><p>The birthday of the user.</p></td>
         </tr>
 
     
@@ -771,7 +813,7 @@ Example Response:
 
             
 
-            <td class="description last">The response object.
+            <td class="description last"><p>The response object.</p>
                 <h6>Properties</h6>
                 
 
@@ -813,7 +855,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to set the HTTP status code of the response.</td>
+            <td class="description last"><p>Method to set the HTTP status code of the response.</p></td>
         </tr>
 
     
@@ -836,7 +878,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to send a JSON response.</td>
+            <td class="description last"><p>Method to send a JSON response.</p></td>
         </tr>
 
     
@@ -913,7 +955,7 @@ Example Response:
 <ul>
         <li>
 <div class="param-desc">
-    A Promise that resolves when the user creation process is complete.
+    <p>A Promise that resolves when the user creation process is complete.</p>
 </div>
 
 
@@ -933,7 +975,7 @@ Example Response:
     
         <li>
 <div class="param-desc">
-    newUser - The newly created user object. Sent in the response on success.
+    <p>newUser - The newly created user object. Sent in the response on success.</p>
 </div>
 
 
@@ -966,28 +1008,30 @@ Example Response:
     
 
     
+    <p class="summary">Delete a user by username.</p>
+    
 
 
 
 <div class="description">
-    Delete a user by username.
-
-- Endpoint URL: /users/:Username
-- Method: DELETE
-- Query Parameters: None
-- Request Body: None
-- Response Data Format: JSON object representing the removed user
-
-Example Request: DELETE /users/MichaelMeier
-
-Example Response:
-{
-   "id": 1,
-    "username": "MichaelMeier",
-    "email": "MichaelMeier@example.com",
-    "birthday": "1990-01-01",
-    "favouriteMovies": ["12345", "67890"]
+    <p>Delete a user by username.</p>
+<ul>
+<li><strong>Endpoint URL</strong>: <code>/users/:Username</code></li>
+<li><strong>Method</strong>: DELETE</li>
+<li><strong>Query Parameters</strong>: None</li>
+<li><strong>Request Body</strong>: None</li>
+<li><strong>Response Data Format</strong>: JSON object representing the removed user</li>
+</ul>
+<p><strong>Example Request</strong>: <code>DELETE /users/MichaelMeier</code></p>
+<p><strong>Example Response</strong>:</p>
+<pre class="prettyprint source lang-json"><code>{
+   &quot;id&quot;: 1,
+    &quot;username&quot;: &quot;MichaelMeier&quot;,
+    &quot;email&quot;: &quot;MichaelMeier@example.com&quot;,
+    &quot;birthday&quot;: &quot;1990-01-01&quot;,
+    &quot;favouriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;]
 }
+</code></pre>
 </div>
 
 
@@ -1039,7 +1083,7 @@ Example Response:
 
             
 
-            <td class="description last">The request object.
+            <td class="description last"><p>The request object.</p>
                 <h6>Properties</h6>
                 
 
@@ -1081,7 +1125,7 @@ Example Response:
 
             
 
-            <td class="description last">The username of the user to delete.</td>
+            <td class="description last"><p>The username of the user to delete.</p></td>
         </tr>
 
     
@@ -1111,7 +1155,7 @@ Example Response:
 
             
 
-            <td class="description last">The response object.
+            <td class="description last"><p>The response object.</p>
                 <h6>Properties</h6>
                 
 
@@ -1153,7 +1197,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to set the HTTP status code of the response.</td>
+            <td class="description last"><p>Method to set the HTTP status code of the response.</p></td>
         </tr>
 
     
@@ -1176,7 +1220,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to send a JSON response.</td>
+            <td class="description last"><p>Method to send a JSON response.</p></td>
         </tr>
 
     
@@ -1259,7 +1303,9 @@ Example Response:
 <dl>
     <dt>
         <div class="param-desc">
-        - If there is an unexpected error during the process or if permission is denied.
+        <ul>
+<li>If there is an unexpected error during the process or if permission is denied.</li>
+</ul>
         </div>
     </dt>
     <dd></dd>
@@ -1287,7 +1333,9 @@ Example Response:
 
         
 <div class="param-desc">
-    - A Promise that resolves when the user deletion process is complete.
+    <ul>
+<li>A Promise that resolves when the user deletion process is complete.</li>
+</ul>
 </div>
 
 
@@ -1320,52 +1368,54 @@ Example Response:
     
 
     
+    <p class="summary"><p>Get all movies
+Retrieves information about all movies.</p></p>
+    
 
 
 
 <div class="description">
-    Get all movies
-Retrieves information about all movies.
-
-- Endpoint URL: /movies
-- Method: GET
-- Query Parameters: None
-- Request Body: None
-- Response Data Format: JSON array of movie objects
-
-Example Request: GET /movies
-
-Example Response:
+    <p>Get all movies
+Retrieves information about all movies.</p>
+<ul>
+<li>Endpoint URL: /movies</li>
+<li>Method: GET</li>
+<li>Query Parameters: None</li>
+<li>Request Body: None</li>
+<li>Response Data Format: JSON array of movie objects</li>
+</ul>
+<p>Example Request: GET /movies</p>
+<p>Example Response:
 [
-  {
-    "Title": "Movie 1",
-    "Genre": {
-       "Name": "Action",
-       "Description": "A description of the Action genre."
-     },
-    "Director": {
-       "Name": "The Wachowskis",
-       "Bio": "A biography of The Wachowskis.",
-       "Birth": 1945,
-       "Death": ""
-     },
-    "Year": 2021
-  },
-  {
-    "Title": "Movie 2",
-    "Genre": {
-       "Name": "Drama",
-       "Description": "A description of the Drama genre."
-     },
-    "Director": {
-       "Name": "Wim Wenders",
-       "Bio": "A biography of Wim Wenders.",
-       "Birth": 1945,
-       "Death": ""
-     },
-    "Year": 2020
-  }
-]
+{
+&quot;Title&quot;: &quot;Movie 1&quot;,
+&quot;Genre&quot;: {
+&quot;Name&quot;: &quot;Action&quot;,
+&quot;Description&quot;: &quot;A description of the Action genre.&quot;
+},
+&quot;Director&quot;: {
+&quot;Name&quot;: &quot;The Wachowskis&quot;,
+&quot;Bio&quot;: &quot;A biography of The Wachowskis.&quot;,
+&quot;Birth&quot;: 1945,
+&quot;Death&quot;: &quot;&quot;
+},
+&quot;Year&quot;: 2021
+},
+{
+&quot;Title&quot;: &quot;Movie 2&quot;,
+&quot;Genre&quot;: {
+&quot;Name&quot;: &quot;Drama&quot;,
+&quot;Description&quot;: &quot;A description of the Drama genre.&quot;
+},
+&quot;Director&quot;: {
+&quot;Name&quot;: &quot;Wim Wenders&quot;,
+&quot;Bio&quot;: &quot;A biography of Wim Wenders.&quot;,
+&quot;Birth&quot;: 1945,
+&quot;Death&quot;: &quot;&quot;
+},
+&quot;Year&quot;: 2020
+}
+]</p>
 </div>
 
 
@@ -1417,7 +1467,7 @@ Example Response:
 
             
 
-            <td class="description last">The request object.</td>
+            <td class="description last"><p>The request object.</p></td>
         </tr>
 
     
@@ -1440,7 +1490,7 @@ Example Response:
 
             
 
-            <td class="description last">The response object.
+            <td class="description last"><p>The response object.</p>
                 <h6>Properties</h6>
                 
 
@@ -1482,7 +1532,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to set the HTTP status code of the response.</td>
+            <td class="description last"><p>Method to set the HTTP status code of the response.</p></td>
         </tr>
 
     
@@ -1505,7 +1555,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to send a JSON response.</td>
+            <td class="description last"><p>Method to send a JSON response.</p></td>
         </tr>
 
     
@@ -1583,7 +1633,9 @@ Example Response:
 <dl>
     <dt>
         <div class="param-desc">
-        - If there is an unexpected error during the process or if permission is denied.
+        <ul>
+<li>If there is an unexpected error during the process or if permission is denied.</li>
+</ul>
         </div>
     </dt>
     <dd></dd>
@@ -1611,7 +1663,7 @@ Example Response:
 <ul>
         <li>
 <div class="param-desc">
-    A Promise that resolves when the movie request process is complete.
+    <p>A Promise that resolves when the movie request process is complete.</p>
 </div>
 
 
@@ -1631,7 +1683,7 @@ Example Response:
     
         <li>
 <div class="param-desc">
-    [] allMovies - The array of all movies in the database.
+    <p>[] allMovies - The array of all movies in the database.</p>
 </div>
 
 
@@ -1664,36 +1716,37 @@ Example Response:
     
 
     
+    <p class="summary">Get all users.</p>
+    
 
 
 
 <div class="description">
-    Get all users.
-Retrieves information about all users.
-
-- Endpoint URL: /users
-- Method: GET
-- Query Parameters: None
-- Request Body: None
-- Response Data Format: JSON array of user objects
-
-Example Request: GET /users
-
-Example Response:
+    <p>Get all users.
+Retrieves information about all users.</p>
+<ul>
+<li>Endpoint URL: /users</li>
+<li>Method: GET</li>
+<li>Query Parameters: None</li>
+<li>Request Body: None</li>
+<li>Response Data Format: JSON array of user objects</li>
+</ul>
+<p>Example Request: GET /users</p>
+<p>Example Response:
 [
-  {
-    "Username": "user1",
-    "Email": "user1@example.com",
-    "Birthday": "1990-01-01",
-    "FavoriteMovies": ["12345", "67890"]
-  },
-  {
-    "Username": "user2",
-    "Email": "user2@example.com",
-    "Birthday": "1995-05-15",
-    "FavoriteMovies": ["23456", "78901"]
-  }
-]
+{
+&quot;Username&quot;: &quot;user1&quot;,
+&quot;Email&quot;: &quot;user1@example.com&quot;,
+&quot;Birthday&quot;: &quot;1990-01-01&quot;,
+&quot;FavoriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;]
+},
+{
+&quot;Username&quot;: &quot;user2&quot;,
+&quot;Email&quot;: &quot;user2@example.com&quot;,
+&quot;Birthday&quot;: &quot;1995-05-15&quot;,
+&quot;FavoriteMovies&quot;: [&quot;23456&quot;, &quot;78901&quot;]
+}
+]</p>
 </div>
 
 
@@ -1745,7 +1798,7 @@ Example Response:
 
             
 
-            <td class="description last">The request object.</td>
+            <td class="description last"><p>The request object.</p></td>
         </tr>
 
     
@@ -1768,7 +1821,7 @@ Example Response:
 
             
 
-            <td class="description last">The response object.
+            <td class="description last"><p>The response object.</p>
                 <h6>Properties</h6>
                 
 
@@ -1810,7 +1863,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to set the HTTP status code of the response.</td>
+            <td class="description last"><p>Method to set the HTTP status code of the response.</p></td>
         </tr>
 
     
@@ -1833,7 +1886,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to send a JSON response.</td>
+            <td class="description last"><p>Method to send a JSON response.</p></td>
         </tr>
 
     
@@ -1911,7 +1964,9 @@ Example Response:
 <dl>
     <dt>
         <div class="param-desc">
-        - If there is an unexpected error during the process or if permission is denied.
+        <ul>
+<li>If there is an unexpected error during the process or if permission is denied.</li>
+</ul>
         </div>
     </dt>
     <dd></dd>
@@ -1939,7 +1994,7 @@ Example Response:
 <ul>
         <li>
 <div class="param-desc">
-    A Promise that resolves when the movie request process is complete.
+    <p>A Promise that resolves when the movie request process is complete.</p>
 </div>
 
 
@@ -1959,7 +2014,7 @@ Example Response:
     
         <li>
 <div class="param-desc">
-    [] allUsers - The array of all users in the database.
+    <p>[] allUsers - The array of all users in the database.</p>
 </div>
 
 
@@ -1992,28 +2047,30 @@ Example Response:
     
 
     
+    <p class="summary"><p>Get data about director
+Retrieves information about a director by his/her name.</p></p>
+    
 
 
 
 <div class="description">
-    Get data about director
-Retrieves information about a director by his/her name.
-
-- Endpoint URL: /movies/director/:Name
-- Method: GET
-- Query Parameters: None
-- Request Body: None
-- Response Data Format: JSON object representing the director
-
-Example Request: GET /movies/director/WimWenders
-
-Example Response:
+    <p>Get data about director
+Retrieves information about a director by his/her name.</p>
+<ul>
+<li>Endpoint URL: /movies/director/:Name</li>
+<li>Method: GET</li>
+<li>Query Parameters: None</li>
+<li>Request Body: None</li>
+<li>Response Data Format: JSON object representing the director</li>
+</ul>
+<p>Example Request: GET /movies/director/WimWenders</p>
+<p>Example Response:
 {
-  "Name": "Wim Wenders",
-  "Description": "Wim Wenders, a German filmmaker, is renowned for his visually stunning films that often explore themes of identity, memory, and the search for meaning in a modern world. His works frequently blend elements of fiction and documentary, offering unique cinematic experiences.",
-  "Birth": 1945,
-  "Death": ""
-}
+&quot;Name&quot;: &quot;Wim Wenders&quot;,
+&quot;Description&quot;: &quot;Wim Wenders, a German filmmaker, is renowned for his visually stunning films that often explore themes of identity, memory, and the search for meaning in a modern world. His works frequently blend elements of fiction and documentary, offering unique cinematic experiences.&quot;,
+&quot;Birth&quot;: 1945,
+&quot;Death&quot;: &quot;&quot;
+}</p>
 </div>
 
 
@@ -2065,7 +2122,7 @@ Example Response:
 
             
 
-            <td class="description last">The request object.</td>
+            <td class="description last"><p>The request object.</p></td>
         </tr>
 
     
@@ -2088,7 +2145,7 @@ Example Response:
 
             
 
-            <td class="description last">The response object.
+            <td class="description last"><p>The response object.</p>
                 <h6>Properties</h6>
                 
 
@@ -2130,7 +2187,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to set the HTTP status code of the response.</td>
+            <td class="description last"><p>Method to set the HTTP status code of the response.</p></td>
         </tr>
 
     
@@ -2153,7 +2210,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to send a JSON response.</td>
+            <td class="description last"><p>Method to send a JSON response.</p></td>
         </tr>
 
     
@@ -2231,7 +2288,9 @@ Example Response:
 <dl>
     <dt>
         <div class="param-desc">
-        - If there is an unexpected error during the process or if permission is denied.
+        <ul>
+<li>If there is an unexpected error during the process or if permission is denied.</li>
+</ul>
         </div>
     </dt>
     <dd></dd>
@@ -2259,7 +2318,7 @@ Example Response:
 <ul>
         <li>
 <div class="param-desc">
-    reqDirector - The object containing the data for the requested director.
+    <p>reqDirector - The object containing the data for the requested director.</p>
 </div>
 
 
@@ -2279,7 +2338,9 @@ Example Response:
     
         <li>
 <div class="param-desc">
-    - A Promise that resolves when the director request process is complete.
+    <ul>
+<li>A Promise that resolves when the director request process is complete.</li>
+</ul>
 </div>
 
 
@@ -2312,26 +2373,28 @@ Example Response:
     
 
     
+    <p class="summary"><p>Get data about genre
+Retrieves information about a movie by its Genre name.</p></p>
+    
 
 
 
 <div class="description">
-    Get data about genre
-Retrieves information about a movie by its Genre name.
-
-- Endpoint URL: /movies/genre/:Name
-- Method: GET
-- Query Parameters: None
-- Request Body: None
-- Response Data Format: JSON object representing the genre
-
-Example Request: GET /movies/genre/Drama
-
-Example Response:
+    <p>Get data about genre
+Retrieves information about a movie by its Genre name.</p>
+<ul>
+<li>Endpoint URL: /movies/genre/:Name</li>
+<li>Method: GET</li>
+<li>Query Parameters: None</li>
+<li>Request Body: None</li>
+<li>Response Data Format: JSON object representing the genre</li>
+</ul>
+<p>Example Request: GET /movies/genre/Drama</p>
+<p>Example Response:
 {
-  "Name": "Genre",
-  "Description": "Drama movies depict realistic and emotionally charged stories that explore the complexities of human relationships and personal struggles. They often delve into themes such as love, loss, family dynamics, and personal growth. Drama films typically focus on character development and aim to evoke a wide range of emotions from the audience."
-}
+&quot;Name&quot;: &quot;Genre&quot;,
+&quot;Description&quot;: &quot;Drama movies depict realistic and emotionally charged stories that explore the complexities of human relationships and personal struggles. They often delve into themes such as love, loss, family dynamics, and personal growth. Drama films typically focus on character development and aim to evoke a wide range of emotions from the audience.&quot;
+}</p>
 </div>
 
 
@@ -2383,7 +2446,7 @@ Example Response:
 
             
 
-            <td class="description last">The request object.</td>
+            <td class="description last"><p>The request object.</p></td>
         </tr>
 
     
@@ -2406,7 +2469,7 @@ Example Response:
 
             
 
-            <td class="description last">The response object.
+            <td class="description last"><p>The response object.</p>
                 <h6>Properties</h6>
                 
 
@@ -2448,7 +2511,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to set the HTTP status code of the response.</td>
+            <td class="description last"><p>Method to set the HTTP status code of the response.</p></td>
         </tr>
 
     
@@ -2471,7 +2534,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to send a JSON response.</td>
+            <td class="description last"><p>Method to send a JSON response.</p></td>
         </tr>
 
     
@@ -2549,7 +2612,9 @@ Example Response:
 <dl>
     <dt>
         <div class="param-desc">
-        - If there is an unexpected error during the process or if permission is denied.
+        <ul>
+<li>If there is an unexpected error during the process or if permission is denied.</li>
+</ul>
         </div>
     </dt>
     <dd></dd>
@@ -2577,7 +2642,9 @@ Example Response:
 <ul>
         <li>
 <div class="param-desc">
-    - A Promise that resolves when the genre request process is complete.
+    <ul>
+<li>A Promise that resolves when the genre request process is complete.</li>
+</ul>
 </div>
 
 
@@ -2597,7 +2664,7 @@ Example Response:
     
         <li>
 <div class="param-desc">
-    reqGenre - The object containing the data for the requested genre.
+    <p>reqGenre - The object containing the data for the requested genre.</p>
 </div>
 
 
@@ -2630,36 +2697,38 @@ Example Response:
     
 
     
+    <p class="summary"><p>Get data by title
+Retrieves information about a movie by its title.</p></p>
+    
 
 
 
 <div class="description">
-    Get data by title
-Retrieves information about a movie by its title.
-
-- Endpoint URL: /movies/:Title
-- Method: GET
-- Query Parameters: None
-- Request Body: None
-- Response Data Format: JSON object representing the movie
-
-Example Request: GET /movies/The Matrix
-
-Example Response:
+    <p>Get data by title
+Retrieves information about a movie by its title.</p>
+<ul>
+<li>Endpoint URL: /movies/:Title</li>
+<li>Method: GET</li>
+<li>Query Parameters: None</li>
+<li>Request Body: None</li>
+<li>Response Data Format: JSON object representing the movie</li>
+</ul>
+<p>Example Request: GET /movies/The Matrix</p>
+<p>Example Response:
 {
-  "Title": "The Matrix",
-  "Genre": {
-     "Name": "Action",
-     "Description": "A description of the Action genre."
-   },
-  "Director": {
-     "Name": "The Wachowskis",
-     "Bio": "A biography of The Wachowskis.",
-     "Birth": 1945,
-     "Death": ""
-   },
-  "Year": 1999
-}
+&quot;Title&quot;: &quot;The Matrix&quot;,
+&quot;Genre&quot;: {
+&quot;Name&quot;: &quot;Action&quot;,
+&quot;Description&quot;: &quot;A description of the Action genre.&quot;
+},
+&quot;Director&quot;: {
+&quot;Name&quot;: &quot;The Wachowskis&quot;,
+&quot;Bio&quot;: &quot;A biography of The Wachowskis.&quot;,
+&quot;Birth&quot;: 1945,
+&quot;Death&quot;: &quot;&quot;
+},
+&quot;Year&quot;: 1999
+}</p>
 </div>
 
 
@@ -2711,7 +2780,7 @@ Example Response:
 
             
 
-            <td class="description last">The request object.</td>
+            <td class="description last"><p>The request object.</p></td>
         </tr>
 
     
@@ -2734,7 +2803,7 @@ Example Response:
 
             
 
-            <td class="description last">The response object.
+            <td class="description last"><p>The response object.</p>
                 <h6>Properties</h6>
                 
 
@@ -2776,7 +2845,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to set the HTTP status code of the response.</td>
+            <td class="description last"><p>Method to set the HTTP status code of the response.</p></td>
         </tr>
 
     
@@ -2799,7 +2868,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to send a JSON response.</td>
+            <td class="description last"><p>Method to send a JSON response.</p></td>
         </tr>
 
     
@@ -2877,7 +2946,9 @@ Example Response:
 <dl>
     <dt>
         <div class="param-desc">
-        - If there is an unexpected error during the process or if permission is denied.
+        <ul>
+<li>If there is an unexpected error during the process or if permission is denied.</li>
+</ul>
         </div>
     </dt>
     <dd></dd>
@@ -2905,7 +2976,9 @@ Example Response:
 <ul>
         <li>
 <div class="param-desc">
-    - A Promise that resolves when the movie request process is complete.
+    <ul>
+<li>A Promise that resolves when the movie request process is complete.</li>
+</ul>
 </div>
 
 
@@ -2925,7 +2998,7 @@ Example Response:
     
         <li>
 <div class="param-desc">
-    reqMovie - The object containing the data for the requested movie.
+    <p>reqMovie - The object containing the data for the requested movie.</p>
 </div>
 
 
@@ -2958,29 +3031,31 @@ Example Response:
     
 
     
+    <p class="summary"><p>Get a user by username
+Retrieves information about a specific user.</p></p>
+    
 
 
 
 <div class="description">
-    Get a user by username
-Retrieves information about a specific user.
-
-- Endpoint URL: /users/:Username
-- Method: GET
-- Query Parameters: None
-- Request Body: None
-- Response Data Format: JSON object representing the user
-
-Example Request: GET /users/johndoe
-
-Example Response:
+    <p>Get a user by username
+Retrieves information about a specific user.</p>
+<ul>
+<li>Endpoint URL: /users/:Username</li>
+<li>Method: GET</li>
+<li>Query Parameters: None</li>
+<li>Request Body: None</li>
+<li>Response Data Format: JSON object representing the user</li>
+</ul>
+<p>Example Request: GET /users/johndoe</p>
+<p>Example Response:
 {
-  "ID": 23,
-  "Username": "johndoe",
-  "Email": "john@example.com",
-  "Birthday": "1990-01-01",
-  "FavouriteMovies": ["12345", "67890"]
-}
+&quot;ID&quot;: 23,
+&quot;Username&quot;: &quot;johndoe&quot;,
+&quot;Email&quot;: &quot;john@example.com&quot;,
+&quot;Birthday&quot;: &quot;1990-01-01&quot;,
+&quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;]
+}</p>
 </div>
 
 
@@ -3032,7 +3107,7 @@ Example Response:
 
             
 
-            <td class="description last">The request object.</td>
+            <td class="description last"><p>The request object.</p></td>
         </tr>
 
     
@@ -3055,7 +3130,7 @@ Example Response:
 
             
 
-            <td class="description last">The response object.
+            <td class="description last"><p>The response object.</p>
                 <h6>Properties</h6>
                 
 
@@ -3097,7 +3172,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to set the HTTP status code of the response.</td>
+            <td class="description last"><p>Method to set the HTTP status code of the response.</p></td>
         </tr>
 
     
@@ -3120,7 +3195,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to send a JSON response.</td>
+            <td class="description last"><p>Method to send a JSON response.</p></td>
         </tr>
 
     
@@ -3198,7 +3273,9 @@ Example Response:
 <dl>
     <dt>
         <div class="param-desc">
-        - If there is an unexpected error during the process or if permission is denied.
+        <ul>
+<li>If there is an unexpected error during the process or if permission is denied.</li>
+</ul>
         </div>
     </dt>
     <dd></dd>
@@ -3226,7 +3303,7 @@ Example Response:
 
         
 <div class="param-desc">
-    A Promise that resolves when the userdata is successfully fetched.
+    <p>A Promise that resolves when the userdata is successfully fetched.</p>
 </div>
 
 
@@ -3259,28 +3336,45 @@ Example Response:
     
 
     
+    <p class="summary"><p>Remove a movie from a user's list of favourites (with promises instead of callbacks)</p>
+<ul>
+<li>Endpoint URL: /users/:Username/movies/:MovieID</li>
+<li>Method: DELETE</li>
+<li>Query Parameters: None</li>
+<li>Request Body: None</li>
+<li>Response Data Format: JSON object with updated user data</li>
+</ul>
+<p>Example Request: DELETE /users/MichaelMeier/movies/67890</p>
+<p>Example Response:
+{
+&quot;Username&quot;: &quot;MichaelMeier&quot;,
+&quot;Password&quot;: &quot;MichaelMeier&quot;,
+&quot;Email&quot;: &quot;MichaelMeier@example.com&quot;,
+&quot;Birthday&quot;: &quot;1990-01-01&quot;,
+&quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;23&quot;]
+}</p>.</p>
+    
 
 
 
 <div class="description">
-    Remove a movie from a user's list of favourites (with promises instead of callbacks)
-
-- Endpoint URL: /users/:Username/movies/:MovieID
-- Method: DELETE
-- Query Parameters: None
-- Request Body: None
-- Response Data Format: JSON object with updated user data
-
-Example Request: DELETE /users/MichaelMeier/movies/67890
-
-Example Response:
+    <p>Remove a movie from a user's list of favourites (with promises instead of callbacks)</p>
+<ul>
+<li>Endpoint URL: /users/:Username/movies/:MovieID</li>
+<li>Method: DELETE</li>
+<li>Query Parameters: None</li>
+<li>Request Body: None</li>
+<li>Response Data Format: JSON object with updated user data</li>
+</ul>
+<p>Example Request: DELETE /users/MichaelMeier/movies/67890</p>
+<p>Example Response:
 {
-  "Username": "MichaelMeier",
-  "Password": "MichaelMeier",
-  "Email": "MichaelMeier@example.com",
-  "Birthday": "1990-01-01",
-  "FavouriteMovies": ["12345", "23"]
-}
+&quot;Username&quot;: &quot;MichaelMeier&quot;,
+&quot;Password&quot;: &quot;MichaelMeier&quot;,
+&quot;Email&quot;: &quot;MichaelMeier@example.com&quot;,
+&quot;Birthday&quot;: &quot;1990-01-01&quot;,
+&quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;23&quot;]
+}</p>
 </div>
 
 
@@ -3332,7 +3426,7 @@ Example Response:
 
             
 
-            <td class="description last">The request object.
+            <td class="description last"><p>The request object.</p>
                 <h6>Properties</h6>
                 
 
@@ -3374,7 +3468,7 @@ Example Response:
 
             
 
-            <td class="description last">The username of the user.</td>
+            <td class="description last"><p>The username of the user.</p></td>
         </tr>
 
     
@@ -3397,7 +3491,7 @@ Example Response:
 
             
 
-            <td class="description last">The ID of the movie to delete from the user's favourites.</td>
+            <td class="description last"><p>The ID of the movie to delete from the user's favourites.</p></td>
         </tr>
 
     
@@ -3427,7 +3521,7 @@ Example Response:
 
             
 
-            <td class="description last">The response object.
+            <td class="description last"><p>The response object.</p>
                 <h6>Properties</h6>
                 
 
@@ -3469,7 +3563,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to set the HTTP status code of the response.</td>
+            <td class="description last"><p>Method to set the HTTP status code of the response.</p></td>
         </tr>
 
     
@@ -3492,7 +3586,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to send a JSON response.</td>
+            <td class="description last"><p>Method to send a JSON response.</p></td>
         </tr>
 
     
@@ -3575,7 +3669,9 @@ Example Response:
 <dl>
     <dt>
         <div class="param-desc">
-        - If there is an unexpected error during the process or if permission is denied.
+        <ul>
+<li>If there is an unexpected error during the process or if permission is denied.</li>
+</ul>
         </div>
     </dt>
     <dd></dd>
@@ -3603,7 +3699,7 @@ Example Response:
 
         
 <div class="param-desc">
-    Promise representing the operation.
+    <p>Promise representing the operation.</p>
 </div>
 
 
@@ -3636,12 +3732,14 @@ Example Response:
     
 
     
+    <p class="summary">Expects at least one updatable field (username, password, email, birthday) in the request body.</p>
+    
 
 
 
 <div class="description">
-    Expects at least one updatable field (username, password, email, birthday) in the request body.
-  Throws an error if the user making the request does not have permission to update the user's info.
+    <p>Expects at least one updatable field (username, password, email, birthday) in the request body.
+Throws an error if the user making the request does not have permission to update the user's info.</p>
 </div>
 
 
@@ -3693,7 +3791,7 @@ Example Response:
 
             
 
-            <td class="description last">The request object.
+            <td class="description last"><p>The request object.</p>
                 <h6>Properties</h6>
                 
 
@@ -3735,7 +3833,7 @@ Example Response:
 
             
 
-            <td class="description last">The request body.
+            <td class="description last"><p>The request body.</p>
                 <h6>Properties</h6>
                 
 
@@ -3777,7 +3875,7 @@ Example Response:
 
             
 
-            <td class="description last">The username of the user.</td>
+            <td class="description last"><p>The username of the user.</p></td>
         </tr>
 
     
@@ -3800,7 +3898,7 @@ Example Response:
 
             
 
-            <td class="description last">The password of the user.</td>
+            <td class="description last"><p>The password of the user.</p></td>
         </tr>
 
     
@@ -3823,7 +3921,7 @@ Example Response:
 
             
 
-            <td class="description last">The email of the user.</td>
+            <td class="description last"><p>The email of the user.</p></td>
         </tr>
 
     
@@ -3846,7 +3944,7 @@ Example Response:
 
             
 
-            <td class="description last">The birthday of the user.</td>
+            <td class="description last"><p>The birthday of the user.</p></td>
         </tr>
 
     
@@ -3883,7 +3981,7 @@ Example Response:
 
             
 
-            <td class="description last">The response object.
+            <td class="description last"><p>The response object.</p>
                 <h6>Properties</h6>
                 
 
@@ -3925,7 +4023,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to set the HTTP status code of the response.</td>
+            <td class="description last"><p>Method to set the HTTP status code of the response.</p></td>
         </tr>
 
     
@@ -3948,7 +4046,7 @@ Example Response:
 
             
 
-            <td class="description last">Method to send a JSON response.</td>
+            <td class="description last"><p>Method to send a JSON response.</p></td>
         </tr>
 
     
@@ -4031,7 +4129,9 @@ Example Response:
 <dl>
     <dt>
         <div class="param-desc">
-        - If there is an unexpected error during the process or if permission is denied.
+        <ul>
+<li>If there is an unexpected error during the process or if permission is denied.</li>
+</ul>
         </div>
     </dt>
     <dd></dd>
@@ -4059,7 +4159,7 @@ Example Response:
 
         
 <div class="param-desc">
-    Promise representing the operation. Resolves to the updated user object upon success.
+    <p>Promise representing the operation. Resolves to the updated user object upon success.</p>
 </div>
 
 
@@ -4104,7 +4204,7 @@ Example Response:
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Feb 08 2024 07:43:35 GMT-0600 (Nordamerikanische Zentral-Normalzeit)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Feb 08 2024 08:10:06 GMT-0600 (Nordamerikanische Zentral-Normalzeit)
 </footer>
 
 <script> prettyPrint(); </script>
