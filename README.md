@@ -6,7 +6,7 @@ CUB Film Data is a full-stack web application designed to manage arthouse movie 
 
 The CUB Film Data app, developed as part of CareerFoundry's Full-Stack Web Development Course, provides users with access to a curated collection of arthouse movies, along with detailed information about directors and genres. Users can register an account, update their personal information, and create a list of favorite movies.
 
-For a live demonstration of the application, visit the [Angular-implementation] (https://ilsegaertner.github.io/CUB-Film-Angular-client/) or check the code on [GitHub](https://github.com/ilsegaertner/CUB_Film_data)
+For the source code of the application, check [GitHub](https://github.com/ilsegaertner/CUB_Film_data)
 
 ### Objective
 
