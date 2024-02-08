@@ -517,7 +517,7 @@
     
 
     
-    <h4 class="name" id="createUser"><span class="type-signature"></span>createUser<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {Promise|Object}</span></h4>
+    <h4 class="name" id="addUser"><span class="type-signature"></span>addUser<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {Promise|Object}</span></h4>
     
 
     
@@ -999,6 +999,404 @@
 </dl>
 </li>
     </ul>
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteFavouriteMovie"><span class="type-signature"></span>deleteFavouriteMovie<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+    <p class="summary"><p>Remove a movie from a user's list of favourites (with promises instead of callbacks)</p>
+<ul>
+<li><strong>Endpoint URL</strong>: <code>/users/:Username/movies/:MovieID</code></li>
+<li><strong>Method</strong>: DELETE</li>
+<li><strong>Query Parameters</strong>: None</li>
+<li><strong>Request Body</strong>: None</li>
+<li><strong>Response Data Format</strong>: JSON object with updated user data</li>
+</ul>
+<p><strong>Example Request</strong>: <code>DELETE /users/MichaelMeier/movies/67890</code></p>
+<p><strong>Example Response</strong>:</p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;Username&quot;: &quot;MichaelMeier&quot;,
+  &quot;Password&quot;: &quot;MichaelMeier&quot;,
+  &quot;Email&quot;: &quot;MichaelMeier@example.com&quot;,
+  &quot;Birthday&quot;: &quot;1990-01-01&quot;,
+  &quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;23&quot;]
+}
+</code></pre>.</p>
+    
+
+
+
+<div class="description">
+    <p>Remove a movie from a user's list of favourites (with promises instead of callbacks)</p>
+<ul>
+<li><strong>Endpoint URL</strong>: <code>/users/:Username/movies/:MovieID</code></li>
+<li><strong>Method</strong>: DELETE</li>
+<li><strong>Query Parameters</strong>: None</li>
+<li><strong>Request Body</strong>: None</li>
+<li><strong>Response Data Format</strong>: JSON object with updated user data</li>
+</ul>
+<p><strong>Example Request</strong>: <code>DELETE /users/MichaelMeier/movies/67890</code></p>
+<p><strong>Example Response</strong>:</p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;Username&quot;: &quot;MichaelMeier&quot;,
+  &quot;Password&quot;: &quot;MichaelMeier&quot;,
+  &quot;Email&quot;: &quot;MichaelMeier@example.com&quot;,
+  &quot;Birthday&quot;: &quot;1990-01-01&quot;,
+  &quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;23&quot;]
+}
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The request object.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>params.Username</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The username of the user.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>params.MovieID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The ID of the movie to delete from the user's favourites.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The response object.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Method to set the HTTP status code of the response.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>json</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Method to send a JSON response.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line667">line 667</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<h5>Fires:</h5>
+<ul>
+    <li>event:{Object} updatedUser - The updated user object (after removing the movie) sent in the response on success.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <ul>
+<li>If there is an unexpected error during the process or if permission is denied.</li>
+</ul>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Promise representing the operation.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -3342,404 +3740,6 @@ Retrieves information about a specific user.</p>
     
 
     
-    <h4 class="name" id="removeFavouriteMovie"><span class="type-signature"></span>removeFavouriteMovie<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
-    
-
-    
-    <p class="summary"><p>Remove a movie from a user's list of favourites (with promises instead of callbacks)</p>
-<ul>
-<li><strong>Endpoint URL</strong>: <code>/users/:Username/movies/:MovieID</code></li>
-<li><strong>Method</strong>: DELETE</li>
-<li><strong>Query Parameters</strong>: None</li>
-<li><strong>Request Body</strong>: None</li>
-<li><strong>Response Data Format</strong>: JSON object with updated user data</li>
-</ul>
-<p><strong>Example Request</strong>: <code>DELETE /users/MichaelMeier/movies/67890</code></p>
-<p><strong>Example Response</strong>:</p>
-<pre class="prettyprint source lang-json"><code>{
-  &quot;Username&quot;: &quot;MichaelMeier&quot;,
-  &quot;Password&quot;: &quot;MichaelMeier&quot;,
-  &quot;Email&quot;: &quot;MichaelMeier@example.com&quot;,
-  &quot;Birthday&quot;: &quot;1990-01-01&quot;,
-  &quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;23&quot;]
-}
-</code></pre>.</p>
-    
-
-
-
-<div class="description">
-    <p>Remove a movie from a user's list of favourites (with promises instead of callbacks)</p>
-<ul>
-<li><strong>Endpoint URL</strong>: <code>/users/:Username/movies/:MovieID</code></li>
-<li><strong>Method</strong>: DELETE</li>
-<li><strong>Query Parameters</strong>: None</li>
-<li><strong>Request Body</strong>: None</li>
-<li><strong>Response Data Format</strong>: JSON object with updated user data</li>
-</ul>
-<p><strong>Example Request</strong>: <code>DELETE /users/MichaelMeier/movies/67890</code></p>
-<p><strong>Example Response</strong>:</p>
-<pre class="prettyprint source lang-json"><code>{
-  &quot;Username&quot;: &quot;MichaelMeier&quot;,
-  &quot;Password&quot;: &quot;MichaelMeier&quot;,
-  &quot;Email&quot;: &quot;MichaelMeier@example.com&quot;,
-  &quot;Birthday&quot;: &quot;1990-01-01&quot;,
-  &quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;23&quot;]
-}
-</code></pre>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>req</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The request object.</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>params.Username</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The username of the user.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>params.MovieID</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The ID of the movie to delete from the user's favourites.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>res</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The response object.</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>status</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Method to set the HTTP status code of the response.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>json</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Method to send a JSON response.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line667">line 667</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<h5>Fires:</h5>
-<ul>
-    <li>event:{Object} updatedUser - The updated user object (after removing the movie) sent in the response on success.</li>
-</ul>
-
-
-
-
-
-
-
-
-
-<h5>Throws:</h5>
-
-        
-
-<dl>
-    <dt>
-        <div class="param-desc">
-        <ul>
-<li>If there is an unexpected error during the process or if permission is denied.</li>
-</ul>
-        </div>
-    </dt>
-    <dd></dd>
-    <dt>
-        <dl>
-            <dt>
-                Type
-            </dt>
-            <dd>
-                
-<span class="param-type">Error</span>
-
-
-            </dd>
-        </dl>
-    </dt>
-    <dd></dd>
-</dl>
-
-
-    
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Promise representing the operation.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
     <h4 class="name" id="updateUser"><span class="type-signature"></span>updateUser<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {Promise.&lt;Object>}</span></h4>
     
 
@@ -4210,13 +4210,13 @@ Throws an error if the user making the request does not have permission to updat
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addFavouriteMovie">addFavouriteMovie</a></li><li><a href="global.html#createUser">createUser</a></li><li><a href="global.html#deleteUser">deleteUser</a></li><li><a href="global.html#getAllMovies">getAllMovies</a></li><li><a href="global.html#getAllUsers">getAllUsers</a></li><li><a href="global.html#getDirector">getDirector</a></li><li><a href="global.html#getGenre">getGenre</a></li><li><a href="global.html#getMovie">getMovie</a></li><li><a href="global.html#getUserByUsername">getUserByUsername</a></li><li><a href="global.html#removeFavouriteMovie">removeFavouriteMovie</a></li><li><a href="global.html#updateUser">updateUser</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addFavouriteMovie">addFavouriteMovie</a></li><li><a href="global.html#addUser">addUser</a></li><li><a href="global.html#deleteFavouriteMovie">deleteFavouriteMovie</a></li><li><a href="global.html#deleteUser">deleteUser</a></li><li><a href="global.html#getAllMovies">getAllMovies</a></li><li><a href="global.html#getAllUsers">getAllUsers</a></li><li><a href="global.html#getDirector">getDirector</a></li><li><a href="global.html#getGenre">getGenre</a></li><li><a href="global.html#getMovie">getMovie</a></li><li><a href="global.html#getUserByUsername">getUserByUsername</a></li><li><a href="global.html#updateUser">updateUser</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Feb 08 2024 08:17:28 GMT-0600 (Nordamerikanische Zentral-Normalzeit)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Feb 08 2024 08:24:20 GMT-0600 (Nordamerikanische Zentral-Normalzeit)
 </footer>
 
 <script> prettyPrint(); </script>
