@@ -123,7 +123,7 @@ We’ll expect JSON in this format
  * }
  * ```
  * @function
- * @name createUser
+ * @name addUser
  * @param {Object} req - The request object.
  * @param {Object} req.body - The request body.
  * @param {string} req.body.Username - The username of the user.
@@ -686,7 +686,7 @@ app.post(
  * }
  * ```
  * @function
- * @name removeFavouriteMovie
+ * @name deleteFavouriteMovie
  * @param {Object} req - The request object.
  * @param {string} req.params.Username - The username of the user.
  * @param {string} req.params.MovieID - The ID of the movie to delete from the user's favourites.

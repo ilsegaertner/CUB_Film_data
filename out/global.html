@@ -110,21 +110,22 @@
     
     <p class="summary"><p>Add a movie to a user's list of favourites</p>
 <ul>
-<li>Endpoint URL: /users/:Username/movies/:MovieID</li>
-<li>Method: POST</li>
-<li>Query Parameters: None</li>
-<li>Request Body: None</li>
-<li>Response Data Format: JSON object with updated user data</li>
+<li><strong>Endpoint URL</strong>: <code>/users/:Username/movies/:MovieID</code></li>
+<li><strong>Method</strong>: POST</li>
+<li><strong>Query Parameters</strong>: None</li>
+<li><strong>Request Body</strong>: None</li>
+<li><strong>Response Data Format</strong>: JSON object with updated user data</li>
 </ul>
-<p>Example Request: POST /users/MichaelMeier/movies/23</p>
-<p>Example Response:
-{
-&quot;Username&quot;: &quot;MichaelMeier&quot;,
-&quot;Password&quot;: &quot;MichaelMeier&quot;,
-&quot;Email&quot;: &quot;MichaelMeier@example.com&quot;,
-&quot;Birthday&quot;: &quot;1990-01-01&quot;,
-&quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;, &quot;23&quot;]
-}</p>.</p>
+<p><strong>Example Request</strong>: <code>POST /users/MichaelMeier/movies/23</code></p>
+<p><strong>Example Response</strong>:</p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;Username&quot;: &quot;MichaelMeier&quot;,
+  &quot;Password&quot;: &quot;MichaelMeier&quot;,
+  &quot;Email&quot;: &quot;MichaelMeier@example.com&quot;,
+  &quot;Birthday&quot;: &quot;1990-01-01&quot;,
+  &quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;, &quot;23&quot;]
+}
+</code></pre>.</p>
     
 
 
@@ -132,21 +133,22 @@
 <div class="description">
     <p>Add a movie to a user's list of favourites</p>
 <ul>
-<li>Endpoint URL: /users/:Username/movies/:MovieID</li>
-<li>Method: POST</li>
-<li>Query Parameters: None</li>
-<li>Request Body: None</li>
-<li>Response Data Format: JSON object with updated user data</li>
+<li><strong>Endpoint URL</strong>: <code>/users/:Username/movies/:MovieID</code></li>
+<li><strong>Method</strong>: POST</li>
+<li><strong>Query Parameters</strong>: None</li>
+<li><strong>Request Body</strong>: None</li>
+<li><strong>Response Data Format</strong>: JSON object with updated user data</li>
 </ul>
-<p>Example Request: POST /users/MichaelMeier/movies/23</p>
-<p>Example Response:
-{
-&quot;Username&quot;: &quot;MichaelMeier&quot;,
-&quot;Password&quot;: &quot;MichaelMeier&quot;,
-&quot;Email&quot;: &quot;MichaelMeier@example.com&quot;,
-&quot;Birthday&quot;: &quot;1990-01-01&quot;,
-&quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;, &quot;23&quot;]
-}</p>
+<p><strong>Example Request</strong>: <code>POST /users/MichaelMeier/movies/23</code></p>
+<p><strong>Example Response</strong>:</p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;Username&quot;: &quot;MichaelMeier&quot;,
+  &quot;Password&quot;: &quot;MichaelMeier&quot;,
+  &quot;Email&quot;: &quot;MichaelMeier@example.com&quot;,
+  &quot;Birthday&quot;: &quot;1990-01-01&quot;,
+  &quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;, &quot;23&quot;]
+}
+</code></pre>
 </div>
 
 
@@ -406,7 +408,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line601">line 601</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line609">line 609</a>
     </li></ul></dd>
     
 
@@ -521,28 +523,30 @@
     
     <p class="summary"><p>Add a new user / Registering</p>
 <ul>
-<li>Endpoint URL: /users</li>
-<li>Method: POST</li>
-<li>Query Parameters: None</li>
-<li>Request Body: JSON object with user data</li>
-<li>Response Data Format: JSON object representing the added user</li>
+<li><strong>Endpoint URL</strong>: <code>/users</code></li>
+<li><strong>Method</strong>: POST</li>
+<li><strong>Query Parameters</strong>: None</li>
+<li><strong>Request Body</strong>: JSON object with user data</li>
+<li><strong>Response Data Format</strong>: JSON object representing the added user</li>
 </ul>
-<p>Example Request: POST /users</p>
-<p>Example Request Body:
-{
-&quot;Username&quot;: &quot;user1&quot;,
-&quot;Password&quot;: &quot;password123&quot;,
-&quot;Email&quot;: &quot;user1@example.com&quot;,
-&quot;Birthday&quot;: &quot;1990-01-01&quot;
-}</p>
-<p>Example Response:
-{
-&quot;Id&quot;: 1,
-&quot;Username&quot;: &quot;user1&quot;,
-&quot;Email&quot;: &quot;user1@example.com&quot;,
-&quot;Birthday&quot;: &quot;1990-01-01&quot;,
-&quot;FavoriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;]
-}</p>.</p>
+<p><strong>Example Request</strong>: <code>POST /users</code></p>
+<p><strong>Example Request Body</strong>:</p>
+<pre class="prettyprint source lang-json"><code>{
+   &quot;Username&quot;: &quot;user1&quot;,
+   &quot;Password&quot;: &quot;password123&quot;,
+   &quot;Email&quot;: &quot;user1@example.com&quot;,
+   &quot;Birthday&quot;: &quot;1990-01-01&quot;
+}
+</code></pre>
+<p><strong>Example Response</strong>:</p>
+<pre class="prettyprint source lang-json"><code>{
+   &quot;Id&quot;: 1,
+   &quot;Username&quot;: &quot;user1&quot;,
+   &quot;Email&quot;: &quot;user1@example.com&quot;,
+   &quot;Birthday&quot;: &quot;1990-01-01&quot;,
+   &quot;FavoriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;]
+}
+</code></pre>.</p>
     
 
 
@@ -550,28 +554,30 @@
 <div class="description">
     <p>Add a new user / Registering</p>
 <ul>
-<li>Endpoint URL: /users</li>
-<li>Method: POST</li>
-<li>Query Parameters: None</li>
-<li>Request Body: JSON object with user data</li>
-<li>Response Data Format: JSON object representing the added user</li>
+<li><strong>Endpoint URL</strong>: <code>/users</code></li>
+<li><strong>Method</strong>: POST</li>
+<li><strong>Query Parameters</strong>: None</li>
+<li><strong>Request Body</strong>: JSON object with user data</li>
+<li><strong>Response Data Format</strong>: JSON object representing the added user</li>
 </ul>
-<p>Example Request: POST /users</p>
-<p>Example Request Body:
-{
-&quot;Username&quot;: &quot;user1&quot;,
-&quot;Password&quot;: &quot;password123&quot;,
-&quot;Email&quot;: &quot;user1@example.com&quot;,
-&quot;Birthday&quot;: &quot;1990-01-01&quot;
-}</p>
-<p>Example Response:
-{
-&quot;Id&quot;: 1,
-&quot;Username&quot;: &quot;user1&quot;,
-&quot;Email&quot;: &quot;user1@example.com&quot;,
-&quot;Birthday&quot;: &quot;1990-01-01&quot;,
-&quot;FavoriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;]
-}</p>
+<p><strong>Example Request</strong>: <code>POST /users</code></p>
+<p><strong>Example Request Body</strong>:</p>
+<pre class="prettyprint source lang-json"><code>{
+   &quot;Username&quot;: &quot;user1&quot;,
+   &quot;Password&quot;: &quot;password123&quot;,
+   &quot;Email&quot;: &quot;user1@example.com&quot;,
+   &quot;Birthday&quot;: &quot;1990-01-01&quot;
+}
+</code></pre>
+<p><strong>Example Response</strong>:</p>
+<pre class="prettyprint source lang-json"><code>{
+   &quot;Id&quot;: 1,
+   &quot;Username&quot;: &quot;user1&quot;,
+   &quot;Email&quot;: &quot;user1@example.com&quot;,
+   &quot;Birthday&quot;: &quot;1990-01-01&quot;,
+   &quot;FavoriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;]
+}
+</code></pre>
 </div>
 
 
@@ -926,7 +932,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line95">line 95</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line94">line 94</a>
     </li></ul></dd>
     
 
@@ -1268,7 +1274,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line712">line 712</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line721">line 721</a>
     </li></ul></dd>
     
 
@@ -1368,54 +1374,54 @@
     
 
     
-    <p class="summary"><p>Get all movies
-Retrieves information about all movies.</p></p>
+    <p class="summary">Get all movies.</p>
     
 
 
 
 <div class="description">
-    <p>Get all movies
+    <p>Get all movies.
 Retrieves information about all movies.</p>
 <ul>
-<li>Endpoint URL: /movies</li>
-<li>Method: GET</li>
-<li>Query Parameters: None</li>
-<li>Request Body: None</li>
-<li>Response Data Format: JSON array of movie objects</li>
+<li><strong>Endpoint URL</strong>: <code>/movies</code></li>
+<li><strong>Method</strong>: GET</li>
+<li><strong>Query Parameters</strong>: None</li>
+<li><strong>Request Body</strong>: None</li>
+<li><strong>Response Data Format</strong>: JSON</li>
 </ul>
-<p>Example Request: GET /movies</p>
-<p>Example Response:
-[
-{
-&quot;Title&quot;: &quot;Movie 1&quot;,
-&quot;Genre&quot;: {
-&quot;Name&quot;: &quot;Action&quot;,
-&quot;Description&quot;: &quot;A description of the Action genre.&quot;
-},
-&quot;Director&quot;: {
-&quot;Name&quot;: &quot;The Wachowskis&quot;,
-&quot;Bio&quot;: &quot;A biography of The Wachowskis.&quot;,
-&quot;Birth&quot;: 1945,
-&quot;Death&quot;: &quot;&quot;
-},
-&quot;Year&quot;: 2021
-},
-{
-&quot;Title&quot;: &quot;Movie 2&quot;,
-&quot;Genre&quot;: {
-&quot;Name&quot;: &quot;Drama&quot;,
-&quot;Description&quot;: &quot;A description of the Drama genre.&quot;
-},
-&quot;Director&quot;: {
-&quot;Name&quot;: &quot;Wim Wenders&quot;,
-&quot;Bio&quot;: &quot;A biography of Wim Wenders.&quot;,
-&quot;Birth&quot;: 1945,
-&quot;Death&quot;: &quot;&quot;
-},
-&quot;Year&quot;: 2020
-}
-]</p>
+<p><strong>Example Request</strong>: <code>GET /movies</code></p>
+<p><strong>Example Response</strong>:</p>
+<pre class="prettyprint source lang-json"><code>[
+  {
+    &quot;Title&quot;: &quot;Movie 1&quot;,
+    &quot;Genre&quot;: {
+       &quot;Name&quot;: &quot;Action&quot;,
+       &quot;Description&quot;: &quot;A description of the Action genre.&quot;
+     },
+    &quot;Director&quot;: {
+       &quot;Name&quot;: &quot;The Wachowskis&quot;,
+       &quot;Bio&quot;: &quot;A biography of The Wachowskis.&quot;,
+       &quot;Birth&quot;: 1945,
+       &quot;Death&quot;: &quot;&quot;
+     },
+    &quot;Year&quot;: 2021
+  },
+  {
+    &quot;Title&quot;: &quot;Movie 2&quot;,
+    &quot;Genre&quot;: {
+       &quot;Name&quot;: &quot;Drama&quot;,
+       &quot;Description&quot;: &quot;A description of the Drama genre.&quot;
+     },
+    &quot;Director&quot;: {
+       &quot;Name&quot;: &quot;Wim Wenders&quot;,
+       &quot;Bio&quot;: &quot;A biography of Wim Wenders.&quot;,
+       &quot;Birth&quot;: 1945,
+       &quot;Death&quot;: &quot;&quot;
+     },
+    &quot;Year&quot;: 2020
+  }
+]
+</code></pre>
 </div>
 
 
@@ -1603,7 +1609,7 @@ Retrieves information about all movies.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line240">line 240</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line243">line 243</a>
     </li></ul></dd>
     
 
@@ -1725,28 +1731,29 @@ Retrieves information about all movies.</p>
     <p>Get all users.
 Retrieves information about all users.</p>
 <ul>
-<li>Endpoint URL: /users</li>
-<li>Method: GET</li>
-<li>Query Parameters: None</li>
-<li>Request Body: None</li>
-<li>Response Data Format: JSON array of user objects</li>
+<li><strong>Endpoint URL</strong>: <code>/users</code></li>
+<li><strong>Method</strong>: GET</li>
+<li><strong>Query Parameters</strong>: None</li>
+<li><strong>Request Body</strong>: None</li>
+<li><strong>Response Data Format</strong>: JSON array of user objects</li>
 </ul>
-<p>Example Request: GET /users</p>
-<p>Example Response:
-[
-{
-&quot;Username&quot;: &quot;user1&quot;,
-&quot;Email&quot;: &quot;user1@example.com&quot;,
-&quot;Birthday&quot;: &quot;1990-01-01&quot;,
-&quot;FavoriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;]
-},
-{
-&quot;Username&quot;: &quot;user2&quot;,
-&quot;Email&quot;: &quot;user2@example.com&quot;,
-&quot;Birthday&quot;: &quot;1995-05-15&quot;,
-&quot;FavoriteMovies&quot;: [&quot;23456&quot;, &quot;78901&quot;]
-}
-]</p>
+<p><strong>Example Request</strong>: <code>GET /users</code></p>
+<p><strong>Example Response</strong>:</p>
+<pre class="prettyprint source lang-json"><code>[
+  {
+    &quot;Username&quot;: &quot;user1&quot;,
+    &quot;Email&quot;: &quot;user1@example.com&quot;,
+    &quot;Birthday&quot;: &quot;1990-01-01&quot;,
+    &quot;FavoriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;]
+  },
+  {
+    &quot;Username&quot;: &quot;user2&quot;,
+    &quot;Email&quot;: &quot;user2@example.com&quot;,
+    &quot;Birthday&quot;: &quot;1995-05-15&quot;,
+    &quot;FavoriteMovies&quot;: [&quot;23456&quot;, &quot;78901&quot;]
+  }
+]
+</code></pre>
 </div>
 
 
@@ -1934,7 +1941,7 @@ Retrieves information about all users.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line187">line 187</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line189">line 189</a>
     </li></ul></dd>
     
 
@@ -2057,20 +2064,21 @@ Retrieves information about a director by his/her name.</p></p>
     <p>Get data about director
 Retrieves information about a director by his/her name.</p>
 <ul>
-<li>Endpoint URL: /movies/director/:Name</li>
-<li>Method: GET</li>
-<li>Query Parameters: None</li>
-<li>Request Body: None</li>
-<li>Response Data Format: JSON object representing the director</li>
+<li><strong>Endpoint URL</strong>: <code>/movies/director/:Name</code></li>
+<li><strong>Method</strong>: GET</li>
+<li><strong>Query Parameters</strong>: None</li>
+<li><strong>Request Body</strong>: None</li>
+<li><strong>Response Data Format</strong>: JSON object representing the director</li>
 </ul>
-<p>Example Request: GET /movies/director/WimWenders</p>
-<p>Example Response:
-{
-&quot;Name&quot;: &quot;Wim Wenders&quot;,
-&quot;Description&quot;: &quot;Wim Wenders, a German filmmaker, is renowned for his visually stunning films that often explore themes of identity, memory, and the search for meaning in a modern world. His works frequently blend elements of fiction and documentary, offering unique cinematic experiences.&quot;,
-&quot;Birth&quot;: 1945,
-&quot;Death&quot;: &quot;&quot;
-}</p>
+<p><strong>Example Request</strong>: <code>GET /movies/director/WimWenders</code></p>
+<p><strong>Example Response</strong>:</p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;Name&quot;: &quot;Wim Wenders&quot;,
+  &quot;Description&quot;: &quot;Wim Wenders, a German filmmaker, is renowned for his visually stunning films that often explore themes of identity, memory, and the search for meaning in a modern world. His works frequently blend elements of fiction and documentary, offering unique cinematic experiences.&quot;,
+  &quot;Birth&quot;: 1945,
+  &quot;Death&quot;: &quot;&quot;
+}
+</code></pre>
 </div>
 
 
@@ -2258,7 +2266,7 @@ Retrieves information about a director by his/her name.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line455">line 455</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line461">line 461</a>
     </li></ul></dd>
     
 
@@ -2383,18 +2391,19 @@ Retrieves information about a movie by its Genre name.</p></p>
     <p>Get data about genre
 Retrieves information about a movie by its Genre name.</p>
 <ul>
-<li>Endpoint URL: /movies/genre/:Name</li>
-<li>Method: GET</li>
-<li>Query Parameters: None</li>
-<li>Request Body: None</li>
-<li>Response Data Format: JSON object representing the genre</li>
+<li><strong>Endpoint URL</strong>: <code>/movies/genre/:Name</code></li>
+<li><strong>Method</strong>: GET</li>
+<li><strong>Query Parameters</strong>: None</li>
+<li><strong>Request Body</strong>: None</li>
+<li><strong>Response Data Format</strong>: JSON object representing the genre</li>
 </ul>
-<p>Example Request: GET /movies/genre/Drama</p>
-<p>Example Response:
-{
-&quot;Name&quot;: &quot;Genre&quot;,
-&quot;Description&quot;: &quot;Drama movies depict realistic and emotionally charged stories that explore the complexities of human relationships and personal struggles. They often delve into themes such as love, loss, family dynamics, and personal growth. Drama films typically focus on character development and aim to evoke a wide range of emotions from the audience.&quot;
-}</p>
+<p><strong>Example Request</strong>: <code>GET /movies/genre/Drama</code></p>
+<p><strong>Example Response</strong>:</p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;Name&quot;: &quot;Genre&quot;,
+  &quot;Description&quot;: &quot;Drama movies depict realistic and emotionally charged stories that explore the complexities of human relationships and personal struggles. They often delve into themes such as love, loss, family dynamics, and personal growth. Drama films typically focus on character development and aim to evoke a wide range of emotions from the audience.&quot;
+}
+</code></pre>
 </div>
 
 
@@ -2582,7 +2591,7 @@ Retrieves information about a movie by its Genre name.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line409">line 409</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line414">line 414</a>
     </li></ul></dd>
     
 
@@ -2707,28 +2716,29 @@ Retrieves information about a movie by its title.</p></p>
     <p>Get data by title
 Retrieves information about a movie by its title.</p>
 <ul>
-<li>Endpoint URL: /movies/:Title</li>
-<li>Method: GET</li>
-<li>Query Parameters: None</li>
-<li>Request Body: None</li>
-<li>Response Data Format: JSON object representing the movie</li>
+<li><strong>Endpoint URL</strong>: <code>/movies/:Title</code></li>
+<li><strong>Method</strong>: GET</li>
+<li><strong>Query Parameters</strong>: None</li>
+<li><strong>Request Body</strong>: None</li>
+<li><strong>Response Data Format</strong>: JSON object representing the movie</li>
 </ul>
-<p>Example Request: GET /movies/The Matrix</p>
-<p>Example Response:
-{
-&quot;Title&quot;: &quot;The Matrix&quot;,
-&quot;Genre&quot;: {
-&quot;Name&quot;: &quot;Action&quot;,
-&quot;Description&quot;: &quot;A description of the Action genre.&quot;
-},
-&quot;Director&quot;: {
-&quot;Name&quot;: &quot;The Wachowskis&quot;,
-&quot;Bio&quot;: &quot;A biography of The Wachowskis.&quot;,
-&quot;Birth&quot;: 1945,
-&quot;Death&quot;: &quot;&quot;
-},
-&quot;Year&quot;: 1999
-}</p>
+<p><strong>Example Request</strong>: <code>GET /movies/The Matrix</code></p>
+<p><strong>Example Response</strong>:</p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;Title&quot;: &quot;The Matrix&quot;,
+  &quot;Genre&quot;: {
+     &quot;Name&quot;: &quot;Action&quot;,
+     &quot;Description&quot;: &quot;A description of the Action genre.&quot;
+   },
+  &quot;Director&quot;: {
+     &quot;Name&quot;: &quot;The Wachowskis&quot;,
+     &quot;Bio&quot;: &quot;A biography of The Wachowskis.&quot;,
+     &quot;Birth&quot;: 1945,
+     &quot;Death&quot;: &quot;&quot;
+   },
+  &quot;Year&quot;: 1999
+}
+</code></pre>
 </div>
 
 
@@ -2916,7 +2926,7 @@ Retrieves information about a movie by its title.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line355">line 355</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line360">line 360</a>
     </li></ul></dd>
     
 
@@ -3031,31 +3041,31 @@ Retrieves information about a movie by its title.</p>
     
 
     
-    <p class="summary"><p>Get a user by username
-Retrieves information about a specific user.</p></p>
+    <p class="summary">Get a user by username.</p>
     
 
 
 
 <div class="description">
-    <p>Get a user by username
+    <p>Get a user by username.
 Retrieves information about a specific user.</p>
 <ul>
-<li>Endpoint URL: /users/:Username</li>
-<li>Method: GET</li>
-<li>Query Parameters: None</li>
-<li>Request Body: None</li>
-<li>Response Data Format: JSON object representing the user</li>
+<li><strong>Endpoint URL</strong>: <code>/users/:Username</code></li>
+<li><strong>Method</strong>: GET</li>
+<li><strong>Query Parameters</strong>: None</li>
+<li><strong>Request Body</strong>: None</li>
+<li><strong>Response Data Format</strong>: JSON</li>
 </ul>
-<p>Example Request: GET /users/johndoe</p>
-<p>Example Response:
-{
-&quot;ID&quot;: 23,
-&quot;Username&quot;: &quot;johndoe&quot;,
-&quot;Email&quot;: &quot;john@example.com&quot;,
-&quot;Birthday&quot;: &quot;1990-01-01&quot;,
-&quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;]
-}</p>
+<p><strong>Example Request</strong>: <code>GET /users/johndoe</code></p>
+<p><strong>Example Response</strong>:</p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;ID&quot;: 23,
+  &quot;Username&quot;: &quot;johndoe&quot;,
+  &quot;Email&quot;: &quot;john@example.com&quot;,
+  &quot;Birthday&quot;: &quot;1990-01-01&quot;,
+  &quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;67890&quot;]
+}
+</code></pre>
 </div>
 
 
@@ -3243,7 +3253,7 @@ Retrieves information about a specific user.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line309">line 309</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line313">line 313</a>
     </li></ul></dd>
     
 
@@ -3338,21 +3348,22 @@ Retrieves information about a specific user.</p>
     
     <p class="summary"><p>Remove a movie from a user's list of favourites (with promises instead of callbacks)</p>
 <ul>
-<li>Endpoint URL: /users/:Username/movies/:MovieID</li>
-<li>Method: DELETE</li>
-<li>Query Parameters: None</li>
-<li>Request Body: None</li>
-<li>Response Data Format: JSON object with updated user data</li>
+<li><strong>Endpoint URL</strong>: <code>/users/:Username/movies/:MovieID</code></li>
+<li><strong>Method</strong>: DELETE</li>
+<li><strong>Query Parameters</strong>: None</li>
+<li><strong>Request Body</strong>: None</li>
+<li><strong>Response Data Format</strong>: JSON object with updated user data</li>
 </ul>
-<p>Example Request: DELETE /users/MichaelMeier/movies/67890</p>
-<p>Example Response:
-{
-&quot;Username&quot;: &quot;MichaelMeier&quot;,
-&quot;Password&quot;: &quot;MichaelMeier&quot;,
-&quot;Email&quot;: &quot;MichaelMeier@example.com&quot;,
-&quot;Birthday&quot;: &quot;1990-01-01&quot;,
-&quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;23&quot;]
-}</p>.</p>
+<p><strong>Example Request</strong>: <code>DELETE /users/MichaelMeier/movies/67890</code></p>
+<p><strong>Example Response</strong>:</p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;Username&quot;: &quot;MichaelMeier&quot;,
+  &quot;Password&quot;: &quot;MichaelMeier&quot;,
+  &quot;Email&quot;: &quot;MichaelMeier@example.com&quot;,
+  &quot;Birthday&quot;: &quot;1990-01-01&quot;,
+  &quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;23&quot;]
+}
+</code></pre>.</p>
     
 
 
@@ -3360,21 +3371,22 @@ Retrieves information about a specific user.</p>
 <div class="description">
     <p>Remove a movie from a user's list of favourites (with promises instead of callbacks)</p>
 <ul>
-<li>Endpoint URL: /users/:Username/movies/:MovieID</li>
-<li>Method: DELETE</li>
-<li>Query Parameters: None</li>
-<li>Request Body: None</li>
-<li>Response Data Format: JSON object with updated user data</li>
+<li><strong>Endpoint URL</strong>: <code>/users/:Username/movies/:MovieID</code></li>
+<li><strong>Method</strong>: DELETE</li>
+<li><strong>Query Parameters</strong>: None</li>
+<li><strong>Request Body</strong>: None</li>
+<li><strong>Response Data Format</strong>: JSON object with updated user data</li>
 </ul>
-<p>Example Request: DELETE /users/MichaelMeier/movies/67890</p>
-<p>Example Response:
-{
-&quot;Username&quot;: &quot;MichaelMeier&quot;,
-&quot;Password&quot;: &quot;MichaelMeier&quot;,
-&quot;Email&quot;: &quot;MichaelMeier@example.com&quot;,
-&quot;Birthday&quot;: &quot;1990-01-01&quot;,
-&quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;23&quot;]
-}</p>
+<p><strong>Example Request</strong>: <code>DELETE /users/MichaelMeier/movies/67890</code></p>
+<p><strong>Example Response</strong>:</p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;Username&quot;: &quot;MichaelMeier&quot;,
+  &quot;Password&quot;: &quot;MichaelMeier&quot;,
+  &quot;Email&quot;: &quot;MichaelMeier@example.com&quot;,
+  &quot;Birthday&quot;: &quot;1990-01-01&quot;,
+  &quot;FavouriteMovies&quot;: [&quot;12345&quot;, &quot;23&quot;]
+}
+</code></pre>
 </div>
 
 
@@ -3634,7 +3646,7 @@ Retrieves information about a specific user.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line659">line 659</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line667">line 667</a>
     </li></ul></dd>
     
 
@@ -4094,7 +4106,7 @@ Throws an error if the user making the request does not have permission to updat
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line515">line 515</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line522">line 522</a>
     </li></ul></dd>
     
 
@@ -4204,7 +4216,7 @@ Throws an error if the user making the request does not have permission to updat
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Feb 08 2024 08:10:06 GMT-0600 (Nordamerikanische Zentral-Normalzeit)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Feb 08 2024 08:17:28 GMT-0600 (Nordamerikanische Zentral-Normalzeit)
 </footer>
 
 <script> prettyPrint(); </script>
