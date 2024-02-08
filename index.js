@@ -712,15 +712,16 @@ app.delete(
 /**
  * Delete a user by username.
  *
- * - Endpoint URL: /users/:Username
- * - Method: DELETE
- * - Query Parameters: None
- * - Request Body: None
- * - Response Data Format: JSON object representing the removed user
+ * - **Endpoint URL**: `/users/:Username`
+ * - **Method**: DELETE
+ * - **Query Parameters**: None
+ * - **Request Body**: None
+ * - **Response Data Format**: JSON object representing the removed user
  *
- * Example Request: DELETE /users/MichaelMeier
+ * **Example Request**: `DELETE /users/MichaelMeier`
  *
- * Example Response:
+ * **Example Response**:
+ * ```json
  * {
  *    "id": 1,
  *     "username": "MichaelMeier",
@@ -728,6 +729,7 @@ app.delete(
  *     "birthday": "1990-01-01",
  *     "favouriteMovies": ["12345", "67890"]
  * }
+ * ```
  *
  * @function
  * @name deleteUser
