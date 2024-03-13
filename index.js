@@ -22,6 +22,8 @@ let allowedOrigins = [
   "http://localhost:8000",
   "http://localhost:9000",
   "http://localhost:4200",
+  "http://joachimpruegl.me/",
+  "https://joachimpruegl.me/CUB-Film-Angular-client",
   "https://cub-film-data.netlify.app",
   "https://ilsegaertner.github.io/CUB-Film-Angular-client",
   "https://ilsegaertner.github.io",
