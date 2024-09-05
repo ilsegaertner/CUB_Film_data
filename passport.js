@@ -17,7 +17,12 @@ passport.use(
       passwordField: "Password",
     },
     async (username, password, callback) => {
-      console.log("Strategy invoked");
+      console.log(
+        "Strategy invoked with Username:",
+        username,
+        "Password:",
+        password
+      ); // Add logging for debugging
       console.log(`${username} ${password}`);
       await Users.findOne({ Username: username })
         .then((user) => {
