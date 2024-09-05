@@ -17,6 +17,7 @@ let generateJWTToken = (user) => {
 module.exports = (router) => {
   router.post("/login", (req, res) => {
     console.log("Received login request with payload:", req.body);
+    console.log("Request Headers:", req.headers); // Log headers to check if JSON content type is set
 
     passport.authenticate("local", { session: false }, (error, user, info) => {
       if (error || !user) {
