@@ -18,6 +18,7 @@ let allowedOrigins = [
   "http://localhost:8080",
   "http://localhost:63239",
   "http://localhost:1234",
+  "http://localhost:1234/login",
   "http://localhost:3000",
   "http://localhost:8000",
   "http://localhost:9000",
@@ -29,6 +30,10 @@ let allowedOrigins = [
   "https://ilsegaertner.github.io/CUB-Film-Angular-client",
   "https://ilsegaertner.github.io",
 ]; // ensures that these domains are allowed to make requests to your API.
+
+app.use(express.json()); // new version for handling JSON data --> replaces bodyParser
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
   cors({
@@ -53,10 +58,6 @@ const { check, validationResult } = require("express-validator"); // for server-
 let auth = require("./auth")(app); // The (app) argument ensures that Express is available in the auth.js file as well
 const passport = require("passport");
 require("./passport");
-
-app.use(express.json()); // new version for handling JSON data --> replaces bodyParser
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect(process.env.CONNECTION_URI, {
   // connect to Heroku
