@@ -54,9 +54,9 @@ let auth = require("./auth")(app); // The (app) argument ensures that Express is
 const passport = require("passport");
 require("./passport");
 
-// app.use(express.json()); // new version for handling JSON data --> replaces bodyParser
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json()); // new version for handling JSON data --> replaces bodyParser
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect(process.env.CONNECTION_URI, {
   // connect to Heroku
