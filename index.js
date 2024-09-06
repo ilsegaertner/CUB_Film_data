@@ -18,7 +18,7 @@ let allowedOrigins = [
   "http://localhost:8080",
   "http://localhost:63239",
   "http://localhost:1234",
-  "http://localhost:1234/login",
+  // "http://localhost:1234/login",
   "http://localhost:3000",
   "http://localhost:8000",
   "http://localhost:9000",
