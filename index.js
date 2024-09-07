@@ -30,9 +30,9 @@ let allowedOrigins = [
   "https://ilsegaertner.github.io",
 ]; // ensures that these domains are allowed to make requests to your API.
 
-app.use(express.json()); // new version for handling JSON data --> replaces bodyParser
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(express.json()); // new version for handling JSON data --> replaces bodyParser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
   cors({
