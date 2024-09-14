@@ -122,7 +122,7 @@ We’ll expect JSON in this format
  *    "Username": "user1",
  *    "Email": "user1@example.com",
  *    "Birthday": "1990-01-01",
- *    "FavoriteMovies": ["12345", "67890"]
+ *    "FavouriteMovies": ["12345", "67890"]
  * }
  * ```
  * @function
@@ -171,7 +171,7 @@ app.post(
             Password: hashedPassword,
             Email: req.body.Email,
             Birthday: req.body.Birthday,
-            FavoriteMovies: [],
+            FavouriteMovies: [],
           })
             .then((user) => {
               res.status(201).json(user);
@@ -208,13 +208,13 @@ app.post(
  *     "Username": "user1",
  *     "Email": "user1@example.com",
  *     "Birthday": "1990-01-01",
- *     "FavoriteMovies": ["12345", "67890"]
+ *     "FavouriteMovies": ["12345", "67890"]
  *   },
  *   {
  *     "Username": "user2",
  *     "Email": "user2@example.com",
  *     "Birthday": "1995-05-15",
- *     "FavoriteMovies": ["23456", "78901"]
+ *     "FavouriteMovies": ["23456", "78901"]
  *   }
  * ]
  * ```
