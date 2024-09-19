@@ -867,21 +867,7 @@ app.delete(
 app.put(
   "/users/:Username/avatar",
   passport.authenticate("jwt", { session: false }),
-  (req, res, next) => {
-    upload.single("Avatar"),
-      (req,
-      res,
-      (err) => {
-        // "Avatar" is the name of the form field in the frontend
-        if (err instanceof multer.MulterError) {
-          return res.status(400).send(err.message);
-        } else if (err) {
-          return res.status(400).send(err.message);
-        }
-        next();
-      });
-  },
-
+  upload.single("Avatar"),
   async (req, res) => {
     if (req.user.Username !== req.params.Username) {
       return res.status(403).send("Permission denied");
