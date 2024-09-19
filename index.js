@@ -7,6 +7,20 @@ const app = express();
 const mongoose = require("mongoose");
 const Models = require("./models.js");
 const fs = require("fs");
+const multer = require("multer");
+
+// Configure storage (for now, store in memory)
+const storage = multer.memoryStorage();
+const upload = multer({
+  storage: storage,
+  limits: { fileSize: 2 * 1024 * 1024 }, // 5MB upload limit
+  fileFilter: (req, file, cb) => {
+    if (!file.mimetype.startsWith("image/")) {
+      return cb(new Error("Only image files are allowed"), false);
+    }
+    cb(null, true);
+  },
+});
 
 const Movies = Models.Movie;
 const Users = Models.User;
@@ -847,6 +861,61 @@ app.delete(
         console.error(err);
         res.status(500).json({ success: false, error: "Error: " + err });
       });
+  }
+);
+
+app.put(
+  "/users/:Username/avatar",
+  passport.authenticate("jwt", { session: false }),
+  (req, res, next) => {
+    upload.single("Avatar"),
+      (req,
+      res,
+      (err) => {
+        // "Avatar" is the name of the form field in the frontend
+        if (err instanceof multer.MulterError) {
+          return res.status(400).send(err.message);
+        } else if (err) {
+          return res.status(400).send(err.message);
+        }
+        next();
+      });
+  },
+
+  async (req, res) => {
+    if (req.user.Username !== req.params.Username) {
+      return res.status(403).send("Permission denied");
+    }
+
+    // Check if a file was uploaded
+    if (!req.file) {
+      return res.status(400).send("No file uploaded");
+    }
+
+    // Access the file buffer
+    const avatarBuffer = req.file.buffer;
+
+    // convert buffer to Base64 string
+    const avatarBase64 = avatarBuffer.toString("base64");
+
+    try {
+      // Update the uses's avatar in the database
+      const updatedUser = await Users.findOneAndUpdate(
+        {
+          Username: req.params.Username,
+        },
+        { $set: { Avatar: avatarBase64 } },
+        { new: true }
+      ).select("-Password");
+
+      if (!updatedUser) {
+        return res.status(404).send("User not found");
+      }
+      res.json(updatedUser);
+    } catch (err) {
+      console.error("Error updating avatar: ", err);
+      res.status(500).send("Error updating avatar");
+    }
   }
 );
 
