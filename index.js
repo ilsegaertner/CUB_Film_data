@@ -348,15 +348,37 @@ app.get(
   "/users/:Username",
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
-    await Users.findOne({ Username: req.params.Username })
-      .select("-Password") // Exclude the "Password" field from the response
-      .then((user) => {
-        res.json(user);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500).send("Error: " + err);
-      });
+    // Ensure the user is authorized to access this profile
+    if (req.user.Username !== req.params.Username) {
+      return res.status(403).send("Permission denied");
+    }
+
+    try {
+      const user = await Users.findOne({
+        Username: req.params.Username,
+      }).select("-Password");
+
+      if (!user) {
+        return res.status(404).send("User not found");
+      }
+      res.json(user);
+    } catch (err) {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    }
+
+    // await Users.findOne({ Username: req.params.Username })
+    //   .select("-Password") // Exclude the "Password" field from the response
+    //   .then((user) => {
+    //     if (!user) {
+    //       return res.status(404).send("User not found");
+    //     }
+    //     res.json(user);
+    //   })
+    //   .catch((err) => {
+    //     console.error(err);
+    //     res.status(500).send("Error: " + err);
+    //   });
   }
 );
 
@@ -564,13 +586,21 @@ app.get(
 app.put(
   "/users/:Username",
   [
-    check("Username", "Username is required").isLength({ min: 5 }),
-    check(
-      "Username",
-      "Username contains non alphanumeric characters - not allowed."
-    ).isAlphanumeric(),
-    check("Password", "Password is required").not().isEmpty(),
-    check("Email", "Email does not appear to be valid").isEmail(),
+    check("Username")
+      .optional()
+      .isLength({ min: 5 })
+      .withMessage("Username must be at least 5 characters long")
+      .isAlphanumeric()
+      .withMessage("Username contains non-alphanumeric characters"),
+    check("Password").optional().notEmpty().withMessage("Password is required"),
+    check("Email")
+      .optional()
+      .isEmail()
+      .withMessage("Email does not appear to be valid"),
+    check("Avatar")
+      .optional()
+      .isBase64()
+      .withMessage("Avatar must be a valid Base64-encoded string"),
   ],
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
@@ -583,29 +613,70 @@ app.put(
 
     // CONDITION TO CHECK ADDED HERE
     if (req.user.Username !== req.params.Username) {
-      return res.status(400).send("Permission denied");
+      return res.status(403).send("Permission denied");
     }
-    // CONDITION ENDS
-    await Users.findOneAndUpdate(
-      { Username: req.params.Username },
-      {
-        $set: {
-          Username: req.body.Username,
-          Password: req.body.Password,
-          // Password: Users.hashPassword(req.body.Password),
-          Email: req.body.Email,
-          Birthday: req.body.Birthday,
+
+    // build the update object dynamically
+    const updateFields = {};
+    if (req.body.Username) {
+      updateFields.Username = req.body.Username;
+    }
+    if (req.body.Password) {
+      updateFields.Password = Users.hashPassword(req.body.Password);
+    }
+    if (req.body.Email) {
+      updateFields.Email = req.body.Email;
+    }
+    if (req.body.Birthday) {
+      updateFields.Birthday = req.body.Birthday;
+    }
+    if (req.body.Avatar) {
+      updateFields.Avatar = req.body.Avatar;
+    }
+
+    try {
+      const updatedUser = await Users.findOneAndUpdate(
+        { Username: req.params.Username },
+        {
+          $set: updateFields,
         },
-      },
-      { new: true } // This line makes sure that the updated document is returned
-    )
-      .then((updatedUser) => {
-        res.json(updatedUser);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500).send("Error: " + err);
-      });
+        { new: true }
+      ).select("-Password");
+
+      if (!updatedUser) {
+        return res.status(404).send("User not found");
+      }
+      res.json(updatedUser);
+    } catch (err) {
+      console.error(err);
+      res.status(500).send(`Error: ${err}`);
+    }
+
+    // // CONDITION ENDS
+    // await Users.findOneAndUpdate(
+    //   { Username: req.params.Username },
+    //   {
+    //     $set: updateFields,
+
+    // {
+    // Username: req.body.Username,
+    // Password: req.body.Password,
+    // // Password: Users.hashPassword(req.body.Password),
+    // Email: req.body.Email,
+    // Birthday: req.body.Birthday,
+    // Avatar: req.body.Avatar,
+    // },
+    //   },
+    //   { new: true } // This line makes sure that the updated document is returned
+    // )
+    //   .select("-Password")
+    //   .then((updatedUser) => {
+    //     res.json(updatedUser);
+    //   })
+    //   .catch((err) => {
+    //     console.error(err);
+    //     res.status(500).send("Error: " + err);
+    //   });
   }
 );
 
